@@ -1,0 +1,2829 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delta Motors Bénin | Excellence Automobile</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    
+    <style>
+        :root {
+            --primary-blue: #005caf;
+            --primary-dark: #0A0A0A;
+            --primary-light: #1A1A1A;
+            --silver: #E5E5E5;
+            --white: #FFFFFF;
+            --accent: #8B0000;
+            --text-dark: #333333;
+            --text-light: #F8F8F8;
+            --blue-light: #e6f0ff;
+            --blue-dark: #004085;
+            --gold: #D4AF37;
+            --platinum: #E5E4E2;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--white);
+            overflow-x: hidden;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: var(--silver);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(to bottom, var(--primary-blue), var(--blue-dark));
+            border-radius: 10px;
+            border: 2px solid var(--silver);
+        }
+        
+        /* Navigation - Redesign Premium */
+        .navbar {
+            padding: 25px 0;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            background-color: transparent;
+            backdrop-filter: blur(10px);
+        }
+        
+        .navbar.scrolled {
+            background-color: rgba(10, 10, 10, 0.95);
+            padding: 15px 0;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(15px);
+        }
+        
+        .navbar-brand {
+            font-weight: 800;
+            font-size: 2rem;
+            color: var(--white);
+            letter-spacing: 1.5px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-brand:hover {
+            transform: translateY(-2px);
+        }
+        
+        .navbar-brand .logo-icon {
+            background: linear-gradient(135deg, var(--primary-blue), var(--blue-dark));
+            width: 45px;
+            height: 45px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            transform: rotate(45deg);
+            box-shadow: 0 5px 15px rgba(0, 92, 175, 0.3);
+            transition: all 0.4s ease;
+        }
+        
+        .navbar-brand:hover .logo-icon {
+            transform: rotate(90deg);
+            box-shadow: 0 8px 20px rgba(0, 92, 175, 0.5);
+        }
+        
+        .navbar-brand .logo-icon span {
+            transform: rotate(-45deg);
+            color: white;
+            font-weight: bold;
+            font-size: 22px;
+            transition: all 0.4s ease;
+        }
+        
+        .navbar-brand:hover .logo-icon span {
+            transform: rotate(-90deg);
+        }
+        
+        .nav-link {
+            color: var(--white) !important;
+            font-weight: 500;
+            margin: 0 15px;
+            position: relative;
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+            padding: 8px 0 !important;
+        }
+        
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: linear-gradient(to right, transparent, var(--primary-blue), transparent);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::before {
+            width: 100%;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary-blue) !important;
+            transform: translateY(-2px);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-blue), var(--blue-dark));
+            border: none;
+            padding: 15px 40px;
+            font-weight: 600;
+            border-radius: 0;
+            letter-spacing: 1px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            box-shadow: 0 5px 15px rgba(0, 92, 175, 0.3);
+        }
+        
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--blue-dark), var(--primary-blue));
+            transition: all 0.6s ease;
+            z-index: -1;
+        }
+        
+        .btn-primary:hover::before {
+            left: 0;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 92, 175, 0.4);
+        }
+        
+        /* Hero Section - Redesign Immersif */
+        .hero {
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+        }
+        
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -2;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(10, 10, 10, 0.85) 0%, rgba(10, 10, 10, 0.4) 100%);
+            z-index: -1;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+        
+        .hero-title {
+            font-size: 4.5rem;
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(to right, transparent, var(--primary-blue), transparent);
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.5s ease;
+        }
+        
+        .hero-content:hover .hero-title::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: var(--silver);
+            margin-bottom: 2.5rem;
+            font-weight: 300;
+            max-width: 600px;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .hero-subtitle::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 5px;
+            height: 80%;
+            background: linear-gradient(to bottom, var(--primary-blue), transparent);
+            border-radius: 10px;
+        }
+        
+        .hero-cta {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -2;
+        }
+        
+        .video-background iframe {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100vw;
+            height: 100vh;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+        }
+        
+        .btn-outline-light {
+            border: 2px solid var(--primary-blue);
+            color: var(--primary-blue);
+            padding: 13px 35px;
+            font-weight: 600;
+            border-radius: 0;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            background-color: transparent;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .btn-outline-light::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background-color: var(--primary-blue);
+            transition: all 0.4s ease;
+            z-index: -1;
+        }
+        
+        .btn-outline-light:hover::before {
+            width: 100%;
+        }
+        
+        .btn-outline-light:hover {
+            color: var(--white);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 92, 175, 0.3);
+        }
+        
+        /* Section Styling - Élégant et Épuré */
+        .section-padding {
+            padding: 120px 0;
+            position: relative;
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 3rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            display: inline-block;
+            font-size: 2.8rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(to right, var(--primary-blue), var(--blue-dark));
+            transition: width 0.5s ease;
+        }
+        
+        .section-title:hover::after {
+            width: 120px;
+        }
+        
+        .section-title.center {
+            display: block;
+            text-align: center;
+        }
+        
+        .section-title.center::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        /* Brand Cards - Design Premium */
+        .brand-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            height: 220px;
+            background-color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            cursor: pointer;
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+        
+        .brand-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 92, 175, 0.1) 0%, rgba(10, 10, 10, 0.1) 100%);
+            opacity: 0;
+            transition: all 0.5s ease;
+            z-index: 1;
+        }
+        
+        .brand-card:hover {
+            transform: translateY(-10px) scale(1.02) rotate(1deg);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        .brand-card:hover::before {
+            opacity: 1;
+        }
+        
+        .brand-card img {
+            max-width: 70%;
+            max-height: 70%;
+            object-fit: contain;
+            transition: all 0.5s ease;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            z-index: 2;
+            position: relative;
+        }
+        
+        .brand-card:hover img {
+            transform: scale(1.15);
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+        
+        /* Vehicle Showcase - Design Immersif */
+        .vehicle-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 30px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: none;
+            cursor: pointer;
+            position: relative;
+            transform-style: preserve-3d;
+        }
+        
+        .vehicle-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(10, 10, 10, 0.7) 0%, transparent 100%);
+            opacity: 0;
+            transition: all 0.4s ease;
+            z-index: 1;
+        }
+        
+        .vehicle-card:hover {
+            transform: translateY(-10px) rotateX(5deg);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        .vehicle-card:hover::before {
+            opacity: 1;
+        }
+        
+        .vehicle-image {
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .vehicle-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.7s ease;
+        }
+        
+        .vehicle-card:hover .vehicle-image img {
+            transform: scale(1.1);
+        }
+        
+        .vehicle-details {
+            padding: 25px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .vehicle-title {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--primary-dark);
+            transition: color 0.3s ease;
+        }
+        
+        .vehicle-card:hover .vehicle-title {
+            color: var(--primary-blue);
+        }
+        
+        .vehicle-price {
+            color: var(--primary-blue);
+            font-weight: 700;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .vehicle-features {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .vehicle-feature {
+            font-size: 0.85rem;
+            color: var(--text-dark);
+            background-color: var(--blue-light);
+            padding: 5px 12px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .vehicle-card:hover .vehicle-feature {
+            background-color: var(--primary-blue);
+            color: var(--white);
+        }
+        
+        /* Badge styles */
+        .availability-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            z-index: 3;
+            font-size: 0.8rem;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+        
+        /* Modal Styling - Élégant et Fonctionnel */
+        .vehicle-modal .modal-content {
+            border-radius: 8px;
+            overflow: hidden;
+            border: none;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+        }
+        
+        .vehicle-modal .modal-header {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary-light));
+            color: var(--white);
+            border-bottom: 2px solid var(--primary-blue);
+            padding: 20px 25px;
+        }
+        
+        .vehicle-modal .modal-body {
+            padding: 0;
+        }
+        
+        .modal-image {
+            height: 350px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .modal-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .modal-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        .modal-details {
+            padding: 30px;
+        }
+        
+        .modal-title {
+            font-size: 2rem;
+            color: var(--primary-dark);
+            margin-bottom: 10px;
+        }
+        
+        .modal-price {
+            color: var(--primary-blue);
+            font-weight: 700;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+        
+        .modal-features {
+            margin-bottom: 25px;
+        }
+        
+        .modal-features ul {
+            padding-left: 20px;
+            columns: 2;
+            list-style-type: none;
+        }
+        
+        .modal-features li {
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 25px;
+            transition: all 0.3s ease;
+        }
+        
+        .modal-features li:hover {
+            color: var(--primary-blue);
+            transform: translateX(5px);
+        }
+        
+        .modal-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary-blue);
+            font-weight: bold;
+        }
+        
+        .whatsapp-btn {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 0;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.3s ease;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .whatsapp-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #128C7E, #25D366);
+            transition: all 0.4s ease;
+            z-index: -1;
+        }
+        
+        .whatsapp-btn:hover::before {
+            left: 0;
+        }
+        
+        .whatsapp-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+            color: white;
+        }
+        
+        /* Filter Buttons - Design Moderne */
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+        
+        .filter-btn {
+            background-color: transparent;
+            border: 2px solid var(--primary-dark);
+            color: var(--primary-dark);
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .filter-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary-blue), var(--blue-dark));
+            transition: all 0.4s ease;
+            z-index: -1;
+        }
+        
+        .filter-btn:hover::before, .filter-btn.active::before {
+            left: 0;
+        }
+        
+        .filter-btn:hover, .filter-btn.active {
+            color: var(--white);
+            border-color: var(--primary-blue);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 92, 175, 0.2);
+        }
+        
+        /* Services Section - Design Épuré */
+        .service-item {
+            text-align: center;
+            padding: 40px 30px;
+            border-radius: 8px;
+            transition: all 0.4s ease;
+            background-color: var(--white);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            height: 100%;
+            border-top: 4px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 0;
+            background: linear-gradient(to bottom, var(--primary-blue), transparent);
+            opacity: 0.1;
+            transition: all 0.4s ease;
+            z-index: 0;
+        }
+        
+        .service-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+            border-top: 4px solid var(--primary-blue);
+            background-color: var(--white);
+        }
+        
+        .service-item:hover::before {
+            height: 100%;
+        }
+        
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--blue-dark));
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 30px;
+            transition: all 0.4s ease;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .service-item:hover .service-icon {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 10px 20px rgba(0, 92, 175, 0.3);
+        }
+        
+        .service-item h3 {
+            margin-bottom: 20px;
+            color: var(--primary-dark);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .service-item p {
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Contact Section - Design Élégant */
+        .contact-form .form-control {
+            border-radius: 0;
+            border: 1px solid #ddd;
+            padding: 15px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            background-color: transparent;
+        }
+        
+        .contact-form .form-control:focus {
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 0.2rem rgba(0, 92, 175, 0.15);
+            background-color: var(--white);
+        }
+        
+        .contact-info-card {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary-light));
+            color: var(--white);
+            padding: 40px;
+            height: 100%;
+            border-left: 5px solid var(--primary-blue);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact-info-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgdmlld0JveD0iMCAwIDYwIDYwIj48ZyBmaWxsPSJub25lIiBzdHJva2ZTb2tlPSIjMDA1Y2FmIiBzdHJva2VPcGFjaXR5PSIwLjEiIHN0cm9rZVdpZHRoPSIyIj48cGF0aCBkPSJNIDAgMCBMIDYwIDYwIE0gNjAgMCBMIDAgNjAiLz48L2c+PC9zdmc+');
+            opacity: 0.1;
+            z-index: 0;
+        }
+        
+        .contact-info-card h3 {
+            color: var(--primary-blue);
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .contact-info-card p {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            position: relative;
+            z-index: 1;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-info-card p:hover {
+            transform: translateX(5px);
+        }
+        
+        .contact-info-card i {
+            color: var(--primary-blue);
+            width: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-info-card p:hover i {
+            transform: scale(1.2);
+        }
+        
+        /* Footer - Design Premium */
+        footer {
+            background: linear-gradient(to bottom, var(--primary-dark), #050505);
+            color: var(--white);
+            padding: 100px 0 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, transparent, var(--primary-blue), transparent);
+        }
+        
+        .footer-title {
+            color: var(--primary-blue);
+            margin-bottom: 25px;
+            font-size: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .footer-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--primary-blue);
+            transition: width 0.3s ease;
+        }
+        
+        .footer-title:hover::after {
+            width: 60px;
+        }
+        
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links li:hover {
+            transform: translateX(5px);
+        }
+        
+        .footer-links a {
+            color: var(--silver);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .footer-links a::before {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: var(--primary-blue);
+            transition: width 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary-blue);
+        }
+        
+        .footer-links a:hover::before {
+            width: 100%;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-icons a {
+            width: 40px;
+            height: 40px;
+            border: 1px solid var(--primary-blue);
+            color: var(--primary-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .social-icons a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: var(--primary-blue);
+            transition: all 0.3s ease;
+            z-index: -1;
+        }
+        
+        .social-icons a:hover::before {
+            width: 100%;
+        }
+        
+        .social-icons a:hover {
+            color: var(--white);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 92, 175, 0.3);
+        }
+        
+        .newsletter-form .form-control {
+            border-radius: 0;
+            border: 1px solid #444;
+            background-color: transparent;
+            color: var(--white);
+            padding: 12px 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .newsletter-form .form-control:focus {
+            border-color: var(--primary-blue);
+            box-shadow: none;
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+        
+        .newsletter-form .btn {
+            border-radius: 0;
+            padding: 12px 20px;
+        }
+        
+        .copyright {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 50px;
+            padding-top: 20px;
+            text-align: center;
+            color: var(--silver);
+            font-size: 0.9rem;
+        }
+        
+        /* Chatbot - Design Futuriste */
+        .chatbot-container {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+        }
+        
+        .chatbot-btn {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-blue), var(--blue-dark));
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(0, 92, 175, 0.3);
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .chatbot-btn::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.2), transparent);
+            transform: rotate(45deg);
+            transition: all 0.3s ease;
+            z-index: -1;
+        }
+        
+        .chatbot-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 15px 30px rgba(0, 92, 175, 0.4);
+        }
+        
+        .chatbot-btn:hover::before {
+            transform: rotate(45deg) translate(50%, -50%);
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(0, 92, 175, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(0, 92, 175, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(0, 92, 175, 0);
+            }
+        }
+        
+        /* Decorative Elements - Éléments Décoratifs Modernes */
+        .decorative-line {
+            height: 3px;
+            width: 80px;
+            background: linear-gradient(to right, transparent, var(--primary-blue), transparent);
+            margin: 30px auto;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .decorative-line::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, transparent, var(--white), transparent);
+            animation: shine 3s infinite;
+        }
+        
+        @keyframes shine {
+            0% {
+                left: -100%;
+            }
+            20% {
+                left: 100%;
+            }
+            100% {
+                left: 100%;
+            }
+        }
+        
+        /* Floating Elements - Éléments Flottants */
+        .floating-shape {
+            position: absolute;
+            z-index: -1;
+            opacity: 0.1;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .shape-1 {
+            top: 20%;
+            left: 5%;
+            width: 200px;
+            height: 200px;
+            background: var(--primary-blue);
+            border-radius: 50%;
+            filter: blur(20px);
+            animation-delay: 0s;
+        }
+        
+        .shape-2 {
+            bottom: 10%;
+            right: 10%;
+            width: 150px;
+            height: 150px;
+            background: var(--primary-blue);
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            filter: blur(15px);
+            animation-delay: 2s;
+        }
+        
+        .shape-3 {
+            top: 60%;
+            left: 10%;
+            width: 100px;
+            height: 100px;
+            background: var(--gold);
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            filter: blur(10px);
+            animation-delay: 4s;
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(5deg);
+            }
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+        }
+        
+        /* Statistics Section - Design Impactant */
+        .stats-section {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stats-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRo="60" height="60" viewBox="0 0 60 60"><g fill="none" stroke="#000" stroke-opacity="0.1" stroke-width="2"><circle cx="30" cy="30" r="28"/></g></svg>');
+            opacity: 0.3;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 30px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .stat-number {
+            font-size: 4rem;
+            font-weight: 800;
+            color: var(--primary-blue);
+            margin-bottom: 10px;
+            font-family: 'Playfair Display', serif;
+            text-shadow: 0 0 10px rgba(0, 92, 175, 0.3);
+            position: relative;
+        }
+        
+        .stat-number::after {
+            content: '+';
+            position: absolute;
+            top: 0;
+            right: -20px;
+            font-size: 2rem;
+            color: var(--gold);
+        }
+        
+        .stat-label {
+            font-size: 1.2rem;
+            color: var(--silver);
+            position: relative;
+        }
+        
+        .stat-label::before {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 2px;
+            background: linear-gradient(to right, transparent, var(--gold), transparent);
+        }
+        
+        /* Testimonials - Design Élégant */
+        .testimonial-card {
+            background-color: var(--white);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            position: relative;
+            transition: all 0.4s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 5rem;
+            color: var(--blue-light);
+            font-family: 'Playfair Display', serif;
+            line-height: 1;
+            opacity: 0.7;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+            font-size: 1.1rem;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+            border: 3px solid var(--primary-blue);
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover .author-avatar {
+            transform: scale(1.1);
+            border-color: var(--gold);
+        }
+        
+        .author-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .author-details h5 {
+            margin-bottom: 5px;
+            color: var(--primary-dark);
+        }
+        
+        .author-details p {
+            color: var(--primary-blue);
+            margin: 0;
+            font-size: 0.9rem;
+        }
+        
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--blue-dark));
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 999;
+            box-shadow: 0 5px 15px rgba(0, 92, 175, 0.3);
+        }
+        
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 92, 175, 0.4);
+        }
+        
+        /* Loading Animation */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--primary-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+        
+        .loading-overlay.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .loader {
+            width: 80px;
+            height: 80px;
+            position: relative;
+        }
+        
+        .loader:before, .loader:after {
+            content: '';
+            position: absolute;
+            border: 4px solid var(--primary-blue);
+            opacity: 1;
+            border-radius: 50%;
+            animation: pulse 1.5s ease-out infinite;
+        }
+        
+        .loader:after {
+            animation-delay: -0.5s;
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 0;
+            }
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 1200px) {
+            .hero-title {
+                font-size: 3.8rem;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 3.2rem;
+            }
+            
+            .navbar {
+                background-color: var(--primary-dark);
+            }
+            
+            .modal-features ul {
+                columns: 1;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.8rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .modal-image {
+                height: 250px;
+            }
+            
+            .hero-cta {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .brand-card {
+                height: 180px;
+            }
+            
+            .stat-number {
+                font-size: 3rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 2.3rem;
+            }
+            
+            .section-padding {
+                padding: 80px 0;
+            }
+            
+            .filter-buttons {
+                gap: 10px;
+            }
+            
+            .filter-btn {
+                padding: 8px 20px;
+                font-size: 0.9rem;
+            }
+            
+            .stat-number {
+                font-size: 2.5rem;
+            }
+            
+            .chatbot-container {
+                bottom: 20px;
+                right: 20px;
+            }
+            
+            .chatbot-btn {
+                width: 60px;
+                height: 60px;
+                font-size: 22px;
+            }
+            
+            .back-to-top {
+                bottom: 90px;
+                right: 20px;
+                width: 45px;
+                height: 45px;
+                font-size: 18px;
+            }
+        }
+        
+        .navbar-logo {
+            height: 100px;
+            width: auto;
+            display: block;
+        }
+        
+        /* Badge colors */
+        .badge-success {
+            background-color: #198754;
+            color: white;
+        }
+        
+        .badge-warning {
+            background-color: #ffc107;
+            color: black;
+        }
+        
+        .badge-info {
+            background-color: #0dcaf0;
+            color: black;
+        }
+        
+        .badge-secondary {
+            background-color: #6c757d;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Overlay -->
+    <div class="loading-overlay">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="logo.png" alt="Delta Motors Logo" class="navbar-logo">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#accueil">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#marques">Marques</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#vehicules">Véhicules</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="floating-shape shape-1"></div>
+        <div class="floating-shape shape-2"></div>
+        <div class="floating-shape shape-3"></div>
+        <div class="video-background">
+            <iframe 
+                src="https://www.youtube.com/embed/qouAU3_kEi0?autoplay=1&mute=1&loop=1&playlist=qouAU3_kEi0&controls=0&modestbranding=1&rel=0" 
+                frameborder="0" 
+                allow="autoplay; fullscreen" 
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <div class="container hero-content">
+            <div class="row">
+                <div class="col-lg-8" data-aos="fade-right" data-aos-duration="1200">
+                    <h1 class="hero-title">L'EXCELLENCE AUTOMOBILE REDÉFINIE</h1>
+                    <p class="hero-subtitle">Découvrez l'alliance parfaite entre prestige, performance et innovation avec Delta Motors, votre concessionnaire exclusif à Cotonou.</p>
+                    <div class="hero-cta">
+                        <a href="#vehicules" class="btn btn-primary">Explorer la collection</a>
+                        <a href="#contact" class="btn btn-outline-light">Prendre rendez-vous</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-6">
+                    <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
+                        <div class="stat-number" data-count="500">0</div>
+                        <div class="stat-label">Véhicules Vendus</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
+                        <div class="stat-number" data-count="12">0</div>
+                        <div class="stat-label">Années d'Expérience</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
+                        <div class="stat-number" data-count="98">0</div>
+                        <div class="stat-label">Clients Satisfaits</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stat-item" data-aos="fade-up" data-aos-delay="400">
+                        <div class="stat-number" data-count="4">0</div>
+                        <div class="stat-label">Marques Exclusives</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brands Section -->
+    <section id="marques" class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5" data-aos="fade-up">
+                    <h2 class="section-title center">Marques Prestigieuses</h2>
+                    <p class="lead">Découvrez l'excellence automobile à travers nos marques partenaires exclusives</p>
+                    <div class="decorative-line"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="brand-card" data-brand="haval">
+                        <img src="https://logos-world.net/wp-content/uploads/2021/02/Haval-Logo.png" alt="Haval Logo">
+                    </div>
+                </div>
+                <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="brand-card" data-brand="byd">
+                        <img src="https://www.logo.wine/a/logo/BYD_Company/BYD_Company-Logo.wine.svg" alt="BYD Logo">
+                    </div>
+                </div>
+                <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="brand-card" data-brand="kaiyi">
+                        <img src="https://www.carlogos.org/car-logos/kaiyi-logo.png" alt="Kaiyi Logo">
+                    </div>
+                </div>
+                <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="brand-card" data-brand="greatwall">
+                        <img src="https://1000logos.net/wp-content/uploads/2021/04/Great-Wall-Motors-logo.png" alt="Great Wall Logo">
+                    </div>
+                </div>
+                <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="500">
+                    <div class="brand-card" data-brand="jac">
+                        <img src="https://www.carlogos.org/car-logos/jac-logo.png" alt="JAC Logo">
+                    </div>
+                </div>
+                <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="600">
+                    <div class="brand-card" data-brand="changan">
+                        <img src="https://www.carlogos.org/car-logos/changan-logo.png" alt="Changan Logo">
+                    </div>
+                </div>
+                <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="700">
+                    <div class="brand-card" data-brand="dongfeng">
+                        <img src="https://www.carlogos.org/car-logos/dongfeng-logo.png" alt="Dongfeng Logo">
+                    </div>
+                </div>
+                <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="800">
+                    <div class="brand-card" data-brand="geely">
+                        <img src="https://www.carlogos.org/car-logos/geely-logo.png" alt="Geely Logo">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vehicles Section -->
+  <!-- Vehicles Section -->
+<section id="vehicules" class="section-padding bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center mb-5" data-aos="fade-up">
+                <h2 class="section-title center">Collection Exclusive</h2>
+                <p class="lead">Découvrez notre sélection de véhicules d'exception</p>
+                <div class="decorative-line"></div>
+            </div>
+        </div>
+        
+        <!-- Filter Buttons -->
+        <div class="row">
+            <div class="col-12">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">Tous</button>
+                    <button class="filter-btn" data-filter="haval">Haval</button>
+                    <button class="filter-btn" data-filter="byd">BYD</button>
+                    <button class="filter-btn" data-filter="kaiyi">Kaiyi</button>
+                    <button class="filter-btn" data-filter="greatwall">Great Wall</button>
+                    <button class="filter-btn" data-filter="jac">JAC</button>
+                    <button class="filter-btn" data-filter="changan">Changan</button>
+                    <button class="filter-btn" data-filter="dongfeng">Dongfeng</button>
+                    <button class="filter-btn" data-filter="geely">Geely</button>
+                    <button class="filter-btn" data-filter="exeed">Exeed</button>
+                    <button class="filter-btn" data-filter="kinglong">King Long</button>
+                    <button class="filter-btn" data-filter="other">Exclusivités</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Vehicles Grid -->
+        <div class="row" id="vehicles-container">
+            <!-- Great Wall Vehicles -->
+            <div class="col-md-4 vehicle-item" data-brand="greatwall" data-aos="fade-up">
+                <div class="vehicle-card" data-bs-toggle="modal" data-bs-target="#vehicleModal" data-vehicle="gw-poer">
+                    <div class="vehicle-image">
+                        <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=900&q=80" alt="Great Wall Poer">
+                    </div>
+                    <span class="availability-badge badge badge-warning">Sur commande</span>
+                    <div class="vehicle-details">
+                        <h3 class="vehicle-title">Great Wall Poer</h3>
+                        <p class="vehicle-price">19.000.000 FCFA</p>
+                        <div class="vehicle-features">
+                            <span class="vehicle-feature">Pickup</span>
+                            <span class="vehicle-feature">4x4</span>
+                            <span class="vehicle-feature">8AT</span>
+                        </div>
+                        <p>Pickup 4x4 Essence super luxury 8AT</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Haval Vehicles -->
+            <div class="col-md-4 vehicle-item" data-brand="haval" data-aos="fade-up">
+                <div class="vehicle-card" data-bs-toggle="modal" data-bs-target="#vehicleModal" data-vehicle="haval-h9">
+                    <div class="vehicle-image">
+                        <img src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=900&q=80" alt="Haval H9">
+                    </div>
+                    <span class="availability-badge badge badge-success">En stock</span>
+                    <div class="vehicle-details">
+                        <h3 class="vehicle-title">Haval H9</h3>
+                        <p class="vehicle-price">23.200.000 FCFA</p>
+                        <div class="vehicle-features">
+                            <span class="vehicle-feature">SUV Premium</span>
+                            <span class="vehicle-feature">4x4</span>
+                            <span class="vehicle-feature">Noire/Gris/Verte</span>
+                        </div>
+                        <p>SUV premium spacieux et tout terrain</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4 vehicle-item" data-brand="haval" data-aos="fade-up">
+                <div class="vehicle-card" data-bs-toggle="modal" data-bs-target="#vehicleModal" data-vehicle="haval-tank500">
+                    <div class="vehicle-image">
+                        <img src="https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=900&q=80" alt="Haval Tank 500">
+                    </div>
+                    <span class="availability-badge badge badge-warning">Sur commande</span>
+                    <div class="vehicle-details">
+                        <h3 class="vehicle-title">Haval Tank 500</h3>
+                        <p class="vehicle-price">33.000.000 FCFA</p>
+                        <div class="vehicle-features">
+                            <span class="vehicle-feature">Luxe</span>
+                            <span class="vehicle-feature">V6 Twin-Turbo</span>
+                            <span class="vehicle-feature">4x4</span>
+                        </div>
+                        <p>SUV de luxe tout terrain avec moteur puissant</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- JAC Vehicles -->
+            <div class="col-md-4 vehicle-item" data-brand="jac" data-aos="fade-up">
+                <div class="vehicle-card" data-bs-toggle="modal" data-bs-target="#vehicleModal" data-vehicle="jac-t8-essence">
+                    <div class="vehicle-image">
+                        <img src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=900&q=80" alt="JAC T8 Essence">
+                    </div>
+                    <span class="availability-badge badge badge-warning">Sur commande</span>
+                    <div class="vehicle-details">
+                        <h3 class="vehicle-title">JAC T8 Essence</h3>
+                        <p class="vehicle-price">13.000.000 FCFA</p>
+                        <div class="vehicle-features">
+                            <span class="vehicle-feature">Pickup</span>
+                            <span class="vehicle-feature">Essence</span>
+                        </div>
+                        <p>Pickup T8 Essence</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4 vehicle-item" data-brand="jac" data-aos="fade-up">
+                <div class="vehicle-card" data-bs-toggle="modal" data-bs-target="#vehicleModal" data-vehicle="jac-t8-diesel">
+                    <div class="vehicle-image">
+                        <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=900&q=80" alt="JAC T8 Diesel">
+                    </div>
+                    <span class="availability-badge badge badge-warning">Sur commande</span>
+                    <div class="vehicle-details">
+                        <h3 class="vehicle-title">JAC T8 Diesel (4x4)</h3>
+                        <p class="vehicle-price">14.000.000 FCFA</p>
+                        <div class="vehicle-features">
+                            <span class="vehicle-feature">Pickup</span>
+                            <span class="vehicle-feature">Diesel</span>
+                            <span class="vehicle-feature">4x4</span>
+                        </div>
+                        <p>Pickup T8 Diesel 4x4</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4 vehicle-item" data-brand="jac" data-aos="fade-up">
+                <div class="vehicle-card" data-bs-toggle="modal" data-bs-target="#vehicleModal" data-vehicle="jac-t6-diesel">
+                    <div class="vehicle-image">
+                        <img src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=900&q=80" alt="JAC T6 Diesel">
+                    </div>
+                    <span class="availability-badge badge badge-success">En stock</span>
+                    <div class="vehicle-details">
+                        <h3 class="vehicle-title">JAC T6 Diesel (4x4)</h3>
+                        <p class="vehicle-price">12.600.000 FCFA</p>
+                        <div class="vehicle-features">
+                            <span class="vehicle-feature">Pickup</span>
+                            <span class="vehicle-feature">Diesel</span>
+                            <span class="vehicle-feature">4x4</span>
+                            <span class="vehicle-feature">Grise</span>
+                        </div>
+                        <p>Pickup T6 Diesel 4x4</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4 vehicle-item" data-brand="jac" data-aos="fade-up">
+                <div class="vehicle-card" data-bs-toggle="modal" data-bs-target="#vehicleModal" data-vehicle="jac-camionnette-1042">
+                    <div class="vehicle-image">
+                        <img src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=900&q=80" alt="JAC Camionnette 1042">
+                    </div>
+                    <span class="availability-badge badge badge-success">En stock</span>
+                    <div class="vehicle-details">
+                        <h3 class="vehicle-title">JAC Camionnette 1042</h3>
+                        <p class="vehicle-price">10.500.000 FCFA</p>
+                        <div class="vehicle-features">
+                            <span class="vehicle-feature">Utilitaire</span>
+                            <span class="vehicle-feature">Blanche</span>
+                        </div>
+                        <p>Camionnette utilitaire robuste</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4 vehicle-item" data-brand="jac" data-aos="fade-up">
+                <div class="vehicle-card" data-bs-toggle="modal" data-bs-target="#vehicleModal" data-vehicle="jac-camionnette-1090k">
+                    <div class="vehicle-image">
+                        <img src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=900&q=80" alt="JAC Camionnette 1090K">
+                    </div>
+                    <span class="availability-badge badge badge-success">En stock</span>
+                    <div class="vehicle-details">
+                        <h3 class="vehicle-title">JAC Camionnette 1090K</h3>
+                        <p class="vehicle-price">14.900.000 FCFA</p>
+                        <div class="vehicle-features">
+                            <span class="vehicle-feature">Utilitaire</span>
+                            <span class="vehicle-feature">Blanche</span>
+                        </div>
+                        <p>Camionnette utilitaire grande capacité</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4 vehicle-item" data-brand="jac" data-aos="fade-up">
+                <div class="vehicle-card" data-bs-toggle="modal" data-bs-target="#vehicleModal" data-vehicle="jac-sunray">
+                    <div class="vehicle-image">
+                        <img src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=900&q=80" alt="JAC Sunray">
+                    </div>
+                    <span class="availability-badge badge badge-success">En stock</span>
+                    <div class="vehicle-details">
+                        <h3 class="vehicle-title">JAC Sunray</h3>
+                        <p class="vehicle-price">16.900.000 FCFA</p>
+                        <div class="vehicle-features">
+                            <span class="vehicle-feature">SUV</span>
+                            <span class="vehicle-feature">Familial</span>
+                            <span class="vehicle-feature">Blanche</span>
+                        </div>
+                        <p>SUV familial spacieux et confortable</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Changan Vehicles -->
+            <div class="col-md-4 vehicle-item" data-brand="changan" data-aos="fade-up">
+                <div class="vehicle-card" data-bs-toggle="modal" data-bs-target="#vehicleModal" data-vehicle="changan-uni-k-4x2">
+                    <div class="vehicle-image">
+                        <img src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=900&q=80" alt="Changan Uni-K 4x2">
+                    </div>
+                    <span class="availability-badge badge badge-success">En stock</span>
+                    <div class="vehicle-details">
+                        <h3 class="vehicle-title">Changan Uni-K 4x2</h3>
+                        <p class="vehicle-price">17.700.000 FCFA</p>
+                        <div class="vehicle-features">
+                            <span class="vehicle-feature">SUV</span>
+                            <span class="vehicle-feature">4x2</span>
+                            <span class="vehicle-feature">Grise sombre</span>
+                        </div>
+                        <p>SUV moderne et élégant</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4 vehicle-item" data-brand="changan" data-aos="fade-up">
+                <div class="vehicle-card" data-bs-toggle="modal" data-bs-target="#vehicleModal" data-vehicle="changan-uni-k-4x4">
+                    <div class="vehicle-image">
+                        <img src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=900&q=80" alt="Changan Uni-K 4x4">
+                    </div>
+                    <span class="availability-badge badge badge-success">En stock</span>
+                    <div class="vehicle-details">
+                        <h3 class="vehicle-title">Changan Uni-K 4x4</h3>
+                        <p class="vehicle-price">19.700.000 FCFA</p>
+                        <div class="vehicle-features">
+                            <span class="vehicle-feature">SUV</span>
+                            <span class="vehicle-feature">4x4</span>
+                            <span class="vehicle-feature">Grise claire</span>
+                        </div>
+                        <p>SUV tout terrain performant</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Dongfeng Vehicles -->
+            <div class="col-md-4 vehicle-item" data-brand="dongfeng" data-aos="fade-up">
+                <div class="vehicle-card" data-bs-toggle="modal" data-bs-target="#vehicleModal" data-vehicle="dongfeng-shine-max">
+                    <div class="vehicle-image">
+                        <img src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=900&q=80" alt="Dongfeng Shine Max">
+                    </div>
+                    <span class="availability-badge badge badge-success">En stock</span>
+                    <div class="vehicle-details">
+                        <h3 class="vehicle-title">Dongfeng Shine Max</h3>
+                        <p class="vehicle-price">12.100.000 FCFA</p>
+                        <div class="vehicle-features">
+                            <span class="vehicle-feature">Berline</span>
+                            <span class="vehicle-feature">Premium</span>
+                            <span class="vehicle-feature">Noire</span>
+                        </div>
+                        <p>Berline haut de gamme</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4 vehicle-item" data-brand="dongfeng" data-aos="fade-up">
+                <div class="vehicle-card" data-bs-toggle="modal" data-bs-target="#vehicleModal" data-vehicle="dongfeng-shine-gs-top">
+                    <div class="vehicle-image">
+                        <img src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=900&q=80" alt="Dongfeng Shine GS Top">
+                    </div>
+                    <span class="availability-badge badge badge-success">En stock</span>
+                    <div class="vehicle-details">
+                        <h3 class="vehicle-title">Dongfeng Shine GS Top</h3>
+                        <p class="vehicle-price">12.100.000 FCFA</p>
+                        <div class="vehicle-features">
+                            <span class="vehicle-feature">Berline</span>
+                            <span class="vehicle-feature">Premium</span>
+                            <span class="vehicle-feature">Noire/Grise</span>
+                        </div>
+                        <p>Berline haut de gamme</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4 vehicle-item" data-brand="dongfeng" data-aos="fade-up">
+                <div class="vehicle-card" data-bs-toggle="modal" data-bs-target="#vehicleModal" data-vehicle="dongfeng-shine-gs-middle">
+                    <div class="vehicle-image">
+                        <img src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=900&q=80" alt="Dongfeng Shine GS Middle">
+                    </div>
+                    <span class="availability-badge badge badge-success">En stock</span>
+                    <div class="vehicle-details">
+                        <h3 class="vehicle-title">Dongfeng Shine GS Middle</h3>
+                        <p class="vehicle-price">10.600.000 FCFA</p>
+                        <div class="vehicle-features">
+                            <span class="vehicle-feature">Berline</span>
+                            <span class="vehicle-feature">Intermédiaire</span>
+                            <span class="vehicle-feature">Noire/Grise</span>
+                        </div>
+                        <p>Berline intermédiaire</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4 vehicle-item" data-brand="dongfeng" data-aos="fade-up">
+                <div class="vehicle-card" data-bs-toggle="modal" data-bs-target="#vehicleModal" data-vehicle="dongfeng-shine-e1">
+                    <div class="vehicle-image">
+                        <img src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=900&q=80" alt="Dongfeng Shine E1">
+                    </div>
+                    <span class="availability-badge badge badge-success">En stock</span>
+                    <div class="vehicle-details">
+                        <h3 class="vehicle-title">Dongfeng Shine E1</h3>
+                        <p class="vehicle-price">8.600.000 FCFA</p>
+                        <div class="vehicle-features">
+                            <span class="vehicle-feature">Berline</span>
+                            <span class="vehicle-feature">Économique</span>
+                            <span class="vehicle-feature">Noire/Grise</span>
+                        </div>
+                        <p>Berline économique</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4 vehicle-item" data-brand="dongfeng" data-aos="fade-up">
+                <div class="vehicle-card" data-bs-toggle="modal" data-bs-target="#vehicleModal" data-vehicle="dongfeng-shine-gdct-e3">
+                    <div class="vehicle-image">
+                        <img src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=900&q=80" alt="Dongfeng Shine GDCT E3">
+                    </div>
+                    <span class="availability-badge badge badge-success">En stock</span>
+                    <div class="vehicle-details">
+                        <h3 class="vehicle-title">Dongfeng Shine GDCT E3</h3>
+                        <p class="vehicle-price">9.950.000 FCFA</p>
+                        <div class="vehicle-features">
+                            <span class="vehicle-feature">Berline</span>
+                            <span class="vehicle-feature">Automatique</span>
+                            <span class="vehicle-feature">Noire/Grise</span>
+                        </div>
+                        <p>Berline automatique</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4 vehicle-item" data-brand="dongfeng" data-aos="fade-up">
+                <div class="vehicle-card" data-bs-toggle="modal" data-bs-target="#vehicleModal" data-vehicle="dongfeng-shine-gdct-e2">
+                    <div class="vehicle-image">
+                        <img src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=c crop&w=900&q=80" alt="Dongfeng Shine GDCT E2">
+                    </div>
+                    <span class="availability-badge badge badge-success">En stock</span>
+                    <div class="vehicle-details">
+                        <h3 class="vehicle-title">Dongfeng Shine GDCT E2</h3>
+                        <p class="vehicle-price">9.200.000 FCFA</p>
+                        <div class="vehicle-features">
+                            <span class="vehicle-feature">Berline</span>
+                            <span class="vehicle-feature">Automatique</span>
+                            <span class="vehicle-feature">Noire</span>
+                        </div>
+                        <p>Berline automatique</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4 vehicle-item" data-brand="dongfeng" data-aos="fade-up">
+                <div class="vehicle-card" data-bs-toggle="modal" data-bs-target="#vehicleModal" data-vehicle="dongfeng-forthing-t5-evo">
+                    <div class="vehicle-image">
+                        <img src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=900&q=80" alt="Dongfeng Forthing T5 Evo">
+                    </div>
+                    <span class="availability-badge badge badge-success">En stock</span>
+                    <div class="vehicle-details">
+                        <h3 class="vehicle-title">Dongfeng Forthing T5 Evo</h3>
+                        <p class="vehicle-price">13.200.000 FCFA</p>
+                        <div class="vehicle-features">
+                            <span class="vehicle-feature">SUV</span>
+                            <span class="vehicle-feature">Sport</span>
+                            <span class="vehicle-feature">Noire</span>
+                        </div>
+                        <p>SUV sportif</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Geely Vehicles -->
+            <div class="col-md-4 vehicle-item" data-brand="geely" data-aos="fade-up">
+                <div class="vehicle-card" data-bs-toggle="modal" data-bs-target="#vehicleModal" data-vehicle="geely-pro">
+                    <div class="vehicle-image">
+                        <img src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=900&q=80" alt="Geely Pro">
+                    </div>
+                    <span class="availability-badge badge badge-success">En stock</span>
+                    <div class="vehicle-details">
+                        <h3 class="vehicle-title">Geely Pro</h3>
+                        <p class="vehicle-price">12.600.000 FCFA</p>
+                        <div class="vehicle-features">
+                            <span class="vehicle-feature">SUV</span>
+                            <span class="vehicle-feature">Compact</span>
+                            <span class="vehicle-feature">Grise/Blanche</span>
+                        </div>
+                        <p>SUV compact et moderne</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Exeed Vehicles -->
+            <div class="col-md-4 vehicle-item" data-brand="exeed" data-aos="fade-up">
+                <div class="vehicle-card" data-bs-toggle="modal" data-bs-target="#vehicleModal" data-vehicle="exeed-rx">
+                    <div class="vehicle-image">
+                        <img src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=900&q=80" alt="Exeed RX">
+                    </div>
+                    <span class="availability-badge badge badge-info">Stock en route</span>
+                    <div class="vehicle-details">
+                        <h3 class="vehicle-title">Exeed RX 2.0, 7DCT 4X4 Confort</h3>
+                        <p class="vehicle-price">26.000.000 FCFA</p>
+                        <div class="vehicle-features">
+                            <span class="vehicle-feature">SUV</span>
+                            <span class="vehicle-feature">4x4</span>
+                            <span class="vehicle-feature">Luxe</span>
+                        </div>
+                        <p>SUV de luxe tout équipé</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- King Long Vehicles -->
+            <div class="col-md-4 vehicle-item" data-brand="kinglong" data-aos="fade-up">
+                <div class="vehicle-card" data-bs-toggle="modal" data-bs-target="#vehicleModal" data-vehicle="kinglong-king-win">
+                    <div class="vehicle-image">
+                        <img src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=900&q=80" alt="King Long King Win">
+                    </div>
+                    <span class="availability-badge badge badge-success">En stock</span>
+                    <div class="vehicle-details">
+                        <h3 class="vehicle-title">King Long King Win</h3>
+                        <p class="vehicle-price">12.100.000 FCFA</p>
+                        <div class="vehicle-features">
+                            <span class="vehicle-feature">Bus</span>
+                            <span class="vehicle-feature">15 places</span>
+                            <span class="vehicle-feature">Blanche</span>
+                        </div>
+                        <p>Bus 15 places</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- China Ruive Vehicles -->
+            <div class="col-md-4 vehicle-item" data-brand="other" data-aos="fade-up">
+                <div class="vehicle-card" data-bs-toggle="modal" data-bs-target="#vehicleModal" data-vehicle="china-ruive-r4l">
+                    <div class="vehicle-image">
+                        <img src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=900&q=80" alt="China Ruive R4L">
+                    </div>
+                    <span class="availability-badge badge badge-success">En stock</span>
+                    <div class="vehicle-details">
+                        <h3 class="vehicle-title">China Ruive R4L</h3>
+                        <p class="vehicle-price">14.100.000 FCFA</p>
+                        <div class="vehicle-features">
+                            <span class="vehicle-feature">SUV</span>
+                            <span class="vehicle-feature">Compact</span>
+                            <span class="vehicle-feature">Blanche</span>
+                        </div>
+                        <p>SUV compact</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Kaiyi Vehicles -->
+            <div class="col-md-4 vehicle-item" data-brand="kaiyi" data-aos="fade-up">
+                <div class="vehicle-card" data-bs-toggle="modal" data-bs-target="#vehicleModal" data-vehicle="kaiyi-x3-middle">
+                    <div class="vehicle-image">
+                        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=900&q=80" alt="Kaiyi X3 Middle">
+                    </div>
+                    <span class="availability-badge badge badge-info">Stock en route</span>
+                    <div class="vehicle-details">
+                        <h3 class="vehicle-title">Kaiyi X3 Middle</h3>
+                        <p class="vehicle-price">7.600.000 FCFA</p>
+                        <div class="vehicle-features">
+                            <span class="vehicle-feature">SUV</span>
+                            <span class="vehicle-feature">Compact</span>
+                            <span class="vehicle-feature">Intermédiaire</span>
+                        </div>
+                        <p>SUV compact version intermédiaire</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4 vehicle-item" data-brand="kaiyi" data-aos="fade-up">
+                <div class="vehicle-card" data-bs-toggle="modal" data-bs-target="#vehicleModal" data-vehicle="kaiyi-x3-full">
+                    <div class="vehicle-image">
+                        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=900&q=80" alt="Kaiyi X3 Full Option">
+                    </div>
+                    <span class="availability-badge badge badge-info">Stock en route</span>
+                    <div class="vehicle-details">
+                        <h3 class="vehicle-title">Kaiyi X3 Full Option</h3>
+                        <p class="vehicle-price">8.500.000 FCFA</p>
+                        <div class="vehicle-features">
+                            <span class="vehicle-feature">SUV</span>
+                            <span class="vehicle-feature">Compact</span>
+                            <span class="vehicle-feature">Full Option</span>
+                        </div>
+                        <p>SUV compact version full option</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- BYD Vehicles -->
+            <div class="col-md-4 vehicle-item" data-brand="byd" data-aos="fade-up">
+                <div class="vehicle-card" data-bs-toggle="modal" data-bs-target="#vehicleModal" data-vehicle="byd-song">
+                    <div class="vehicle-image">
+                        <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=900&q=80" alt="BYD Song Plus">
+                    </div>
+                    <span class="availability-badge badge badge-success">En stock</span>
+                    <div class="vehicle-details">
+                        <h3 class="vehicle-title">BYD Song Plus Hybride</h3>
+                        <p class="vehicle-price">18.700.000 FCFA</p>
+                        <div class="vehicle-features">
+                            <span class="vehicle-feature">Hybride</span>
+                            <span class="vehicle-feature">105km électrique</span>
+                            <span class="vehicle-feature">Noire/Grise</span>
+                        </div>
+                        <p>SUV hybride avec une autonomie de 105 km</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Vehicle Modal -->
+    <div class="modal fade vehicle-modal" id="vehicleModal" tabindex="-1" aria-labelledby="vehicleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="vehicleModalLabel">Détails du véhicule</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-image">
+                        <img id="modalVehicleImage" src="" alt="Vehicle Image">
+                    </div>
+                    <div class="modal-details">
+                        <h3 class="modal-title" id="modalVehicleTitle"></h3>
+                        <p class="modal-price" id="modalVehiclePrice"></p>
+                        <p id="modalVehicleDescription"></p>
+                        
+                        <div class="modal-features">
+                            <h5>Caractéristiques exclusives</h5>
+                            <ul id="modalVehicleFeatures">
+                                <!-- Features will be added dynamically -->
+                            </ul>
+                        </div>
+                        
+                        <a href="#" class="whatsapp-btn" id="whatsappLink">
+                            <i class="fab fa-whatsapp"></i> Contacter un conseiller
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Testimonials Section -->
+    <section class="section-padding" style="background-color: var(--blue-light);">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5" data-aos="fade-up">
+                    <h2 class="section-title center">Témoignages</h2>
+                    <p class="lead">Ce que nos clients disent de nous</p>
+                    <div class="decorative-line"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">J'ai acheté mon Haval H6 chez Delta Motors il y a 6 mois et je suis plus que satisfait. Le service après-vente est exceptionnel et le véhicule est d'une qualité remarquable.</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client">
+                            </div>
+                            <div class="author-details">
+                                <h5>Koffi Mensah</h5>
+                                <p>Entrepreneur</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">Excellente expérience d'achat. Le personnel est compétent et à l'écoute. Mon BYD Song Plus Hybride est économique et performant. Je recommande vivement Delta Motors.</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client">
+                            </div>
+                            <div class="author-details">
+                                <h5>Chantal Adjobo</h5>
+                                <p>Cadre dirigeante</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5" data-aos="fade-up">
+                    <h2 class="section-title center">Services d'Excellence</h2>
+                    <p class="lead">Une expérience client complète et sur-mesure</p>
+                    <div class="decorative-line"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <i class="fas fa-car"></i>
+                        </div>
+                        <h3>Vente de Véhicules</h3>
+                        <p>Découvrez notre gamme de véhicules neufs et d'occasion de qualité premium, avec un service personnalisé.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3>Service Après-Vente</h3>
+                        <p>Entretien, réparation et maintenance par des techniciens certifiés utilisando des équipements de pointe.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h3>Pièces Détachées</h3>
+                        <p>Pièces authentiques disponibles pour garantir la performance et la longévité de votre véhicule.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Garantie Étendue</h3>
+                        <p>Bénéficiez de garanties étendues pour rouler l'esprit tranquille pendant des années.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="500">
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <i class="fas fa-money-bill-wave"></i>
+                        </div>
+                        <h3>Financement Sur Mesure</h3>
+                        <p>Solutions de financement adaptées à votre situation avec nos partenaires bancaires.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="600">
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <i class="fas fa-phone-volume"></i>
+                        </div>
+                        <h3>Assistance 24/7</h3>
+                        <p>Service d'assistance routière disponible 24h/24 et 7j/7 pour une tranquillité absolue.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5" data-aos="fade-up">
+                    <h2 class="section-title center">Contact Prestige</h2>
+                    <p class="lead">Notre équipe d'experts est à votre disposition pour concrétiser vos projets</p>
+                    <div class="decorative-line"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-4" data-aos="fade-right">
+                    <form class="contact-form">
+                        <div class="mb-4">
+                            <input type="text" class="form-control" placeholder="Votre nom complet" required>
+                        </div>
+                        <div class="mb-4">
+                            <input type="email" class="form-control" placeholder="Votre adresse email" required>
+                        </div>
+                        <div class="mb-4">
+                            <input type="tel" class="form-control" placeholder="Votre numéro de téléphone">
+                        </div>
+                        <div class="mb-4">
+                            <textarea class="form-control" rows="5" placeholder="Votre message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Envoyer le message</button>
+                    </form>
+                </div>
+                <div class="col-md-6" data-aos="fade-left">
+                    <div class="contact-info-card">
+                        <h3>Informations de contact</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> Tanto, PK4, Route de Porto-Novo, Cotonou, Bénin</p>
+                        <p><i class="fas fa-phone"></i> +229 XX XX XX XX</p>
+                        <p><i class="fas fa-envelope"></i> info@deltamotorsbenin.com</p>
+                        <hr>
+                        <h4>Heures d'ouverture</h4>
+                        <p><i class="far fa-clock"></i> Lun - Ven: 8h00 - 18h00</p>
+                        <p><i class="far fa-clock"></i> Samedi: 9h00 - 16h00</p>
+                        <p><i class="far fa-clock"></i> Dimanche: Fermé</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <h3 class="footer-title">Delta Motors</h3>
+                    <p>Votre concessionnaire premium de véhicules Haval, BYD et Kaiyi à Cotonou, Bénin. Excellence, innovation et prestige.</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/deltagroupeafrique"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+                    <h3 class="footer-title">Navigation</h3>
+                    <ul class="footer-links">
+                        <li><a href="#accueil">Accueil</a></li>
+                        <li><a href="#marques">Marques</a></li>
+                        <li><a href="#vehicules">Véhicules</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h3 class="footer-title">Nos marques</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Haval</a></li>
+                        <li><a href="#">BYD</a></li>
+                        <li><a href="#">Kaiyi</a></li>
+                        <li><a href="#">Great Wall</a></li>
+                        <li><a href="#">Véhicules d'occasion</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h3 class="footer-title">Newsletter</h3>
+                    <p>Abonnez-vous pour recevoir nos actualités et offres exclusives.</p>
+                    <form class="newsletter-form">
+                        <div class="input-group mb-3">
+                            <input type="email" class="form-control" placeholder="Votre email" aria-label="Email">
+                            <button class="btn btn-primary" type="button"><i class="fas fa-paper-plane"></i></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Delta Motors Bénin. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chatbot -->
+    <div class="chatbot-container">
+        <div class="chatbot-btn">
+            <i class="fas fa-comments"></i>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- AOS Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Custom JS -->
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1200,
+            once: true,
+            easing: 'ease-in-out'
+        });
+
+        // Loading animation
+        window.addEventListener('load', function() {
+            const loadingOverlay = document.querySelector('.loading-overlay');
+            setTimeout(() => {
+                loadingOverlay.classList.add('hidden');
+            }, 1500);
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            const backToTop = document.querySelector('.back-to-top');
+            
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+            
+            if (window.scrollY > 500) {
+                backToTop.classList.add('active');
+            } else {
+                backToTop.classList.remove('active');
+            }
+        });
+
+        // Back to top functionality
+        document.querySelector('.back-to-top').addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Counter animation for statistics
+        function animateCounter() {
+            const counters = document.querySelectorAll('.stat-number');
+            const speed = 200;
+            
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-count');
+                const count = +counter.innerText;
+                const increment = Math.ceil(target / speed);
+                
+                if (count < target) {
+                    counter.innerText = Math.min(count + increment, target);
+                    setTimeout(() => animateCounter(counter), 1);
+                }
+            });
+        }
+
+        // Initialize counter when in viewport
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounter();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        observer.observe(document.querySelector('.stats-section'));
+
+        // Vehicle data
+        const vehicles = {
+            'haval-h9': {
+                title: 'Haval H9',
+                price: '23.200.000 FCFA',
+                image: 'https://images.unsplash.com/photo-1553440569-bcc63803a83d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=900&q=80',
+                description: 'Le Haval H9 est un SUV premium spacieux et robuste, conçu pour offrir confort et performance en tout terrain.',
+                features: [
+                    'Moteur turbo essence 2.0L 4 cylindres',
+                    'Transmission automatique 8 vitesses',
+                    '4x4 permanent avec modes de conduite',
+                    'Intérieur cuir premium avec sièges chauffants',
+                    'Système audio premium',
+                    'Contrôle de descente et aide au démarrage en côte',
+                    'Régulateur de vitesse adaptatif',
+                    'Système de freinage d\'urgence autonome'
+                ]
+            },
+            'gw-poer': {
+                title: 'Great Wall Poer',
+                price: '19.000.000 FCFA',
+                image: 'https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=900&q=80',
+                description: 'Le Great Wall Poer est un pickup robuste et luxueux, parfait pour le travail et les loisirs, avec une transmission automatique 8 vitesses.',
+                features: [
+                    'Moteur essence turbo 2.0L',
+                    'Transmission automatique 8 vitesses',
+                    'Système 4x4 avec différentiels verrouillables',
+                    'Intérieur cuir avec sièges chauffants',
+                    'Système multimedia 9 pouces',
+                    'Capacité de remorquage jusqu\'à 3 tonnes',
+                    'Assistant de descente',
+                    'Contrôle de stabilité et traction'
+                ]
+            },
+            'gw-tank500': {
+                title: 'Great Wall Tank 500',
+                price: '33.000.000 FCFA',
+                image: 'https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=900&q=80',
+                description: 'Le Tank 500 est le SUV flagship de Great Wall, alliant luxe, performance et capacités tout-terrain exceptionnelles.',
+                features: [
+                    'Moteur V6 twin-turbo 3.0L',
+                    'Transmission automatique 9 vitesses',
+                    'Système 4x4 avec modes terrain multiples',
+                    'Intérieur luxueux en cuir Nappa',
+                    'Système audio premium 12 haut-parleurs',
+                    'Suspension adaptable et hauteur variable',
+                    'Écrans tactiles jumeaux 12,3 pouces',
+                    'Systeme de caméras 360 degrés'
+                ]
+            },
+            'byd-song': {
+                title: 'BYD Song Plus Hybride',
+                price: '18.700.000 FCFA',
+                image: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=900&q=80',
+                description: 'Le BYD Song Plus est un SUV hybride innovant offrant une autonomie électrique de 105 km et une expérience de conduite silencieuse et écologique.',
+                features: [
+                    'Autonomie électrique de 105 km',
+                    'Moteur hybride essence-électrique',
+                    'Recharge rapide disponible',
+                    'Écran tactile rotatif 12,8 pouces',
+                    'Système d\'assistance à la conduite',
+                    'Toit panoramique électrique',
+                    'Freinage régénératif',
+                    'Connectivité smartphone avancée'
+                ]
+            },
+            'jac-t8-essence': {
+                title: 'JAC T8 Essence',
+                price: '13.000.000 FCFA',
+                image: 'https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=900&q=80',
+                description: 'Pickup JAC T8 essence, robuste et fiable.',
+                features: [
+                    'Moteur essence',
+                    'Transmission manuelle/automatique',
+                    'Double cabine',
+                    'Volume de chargement important',
+                    'Design moderne'
+                ]
+            },
+            'jac-t8-diesel': {
+                title: 'JAC T8 Diesel (4x4)',
+                price: '14.000.000 FCFA',
+                image: 'https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=900&q=80',
+                description: 'Pickup JAC T8 Diesel 4x4, parfait pour les terrains difficiles.',
+                features: [
+                    'Moteur Diesel',
+                    'Transmission 4x4',
+                    'Double cabine',
+                    'Grande capacité de charge',
+                    'Suspension renforcée'
+                ]
+            },
+            'jac-t6-diesel': {
+                title: 'JAC T6 Diesel (4x4)',
+                price: '12.600.000 FCFA',
+                image: 'https://images.unsplash.com/photo-1553440569-bcc63803a83d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=900&q=80',
+                description: 'Pickup JAC T6 Diesel 4x4, équilibre parfait entre performance et économie.',
+                features: [
+                    'Moteur Diesel',
+                    'Transmission 4x4',
+                    'Cabine spacieuse',
+                    'Châssis renforcé',
+                    'Design ergonomique'
+                ]
+            },
+            'jac-camionnette-1042': {
+                title: 'JAC Camionnette 1042',
+                price: '10.500.000 FCFA',
+                image: 'https://images.unsplash.com/photo-1553440569-bcc63803a83d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=900&q=80',
+                description: 'Camionnette utilitaire JAC 1042, idéale pour le transport de marchandises.',
+                features: [
+                    'Moteur Diesel économique',
+                    'Grand volume de chargement',
+                    'Châssis robuste',
+                    'Faible consommation',
+                    'Entretien facile'
+                ]
+            },
+            'jac-camionnette-1090k': {
+                title: 'JAC Camionnette 1090K',
+                price: '14.900.000 FCFA',
+                image: 'https://images.unsplash.com/photo-1553440569-bcc63803a83d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=900&q=80',
+                description: 'Camionnette utilitaire JAC 1090K, grande capacité de chargement.',
+                features: [
+                    'Moteur Diesel performant',
+                    'Très grande capacité de charge',
+                    'Cabine confortable',
+                    'Suspension adaptée aux charges lourdes',
+                    'Freinage ABS'
+                ]
+            },
+            'jac-sunray': {
+                title: 'JAC Sunray',
+                price: '16.900.000 FCFA',
+                image: 'https://images.unsplash.com/photo-1553440569-bcc63803a83d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=900&q=80',
+                description: 'SUV JAC Sunray, spacieux et confortable pour toute la famille.',
+                features: [
+                    'Moteur essence économique',
+                    'Espace intérieur généreux',
+                    'Toit panoramique',
+                    'Système multimedia tactile',
+                    'Sièges en cuir'
+                ]
+            },
+            'changan-uni-k-4x2': {
+                title: 'Changan Uni-K 4x2',
+                price: '17.700.000 FCFA',
+                image: 'https://images.unsplash.com/photo-1553440569-bcc63803a83d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=900&q=80',
+                description: 'SUV Changan Uni-K 4x2, design moderne et technologies avancées.',
+                features: [
+                    'Moteur turbo essence',
+                    'Transmission automatique',
+                    'Écrans tactiles multiples',
+                    'Système audio premium',
+                    'Aides à la conduite'
+                ]
+            },
+            'changan-uni-k-4x4': {
+                title: 'Changan Uni-K 4x4',
+                price: '19.700.000 FCFA',
+                image: 'https://images.unsplash.com/photo-1553440569-bcc63803a83d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=900&q=80',
+                description: 'SUV Changan Uni-K 4x4, performance tout-terrain et confort premium.',
+                features: [
+                    'Moteur turbo essence',
+                    'Transmission 4x4',
+                    'Suspension adaptable',
+                    'Intérieur cuir premium',
+                    'Toit panoramique'
+                ]
+            },
+            'dongfeng-shine-max': {
+                title: 'Dongfeng Shine Max',
+                price: '12.100.000 FCFA',
+                image: 'https://images.unsplash.com/photo-1553440569-bcc63803a83d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=900&q=80',
+                description: 'Berline Dongfeng Shine Max, élégance et confort pour les longs trajets.',
+                features: [
+                    'Moteur essence économique',
+                    'Transmission automatique',
+                    'Intérieur spacieux',
+                    'Système de navigation',
+                    'Régulateur de vitesse'
+                ]
+            },
+            'kaiyi-x3': {
+                title: 'Kaiyi X3',
+                price: '7.600.000 FCFA',
+                image: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=900&q=80',
+                description: 'Le Kaiyi X3 est un SUV compact et abordable, offrant un design moderne et des équipements complets pour un excellent rapport qualité-prix.',
+                features: [
+                    'Moteur essence 1.5L',
+                    'Transmission manuelle ou automatique',
+                    'Écran tactile 10,25 pouces',
+                    'Caméra de recul et capteurs',
+                    'Contrôle de stabilité ESP',
+                    'Climatisation automatique',
+                    'Connectivité Apple CarPlay/Android Auto',
+                    'Système de navigation intégré'
+                ]
+            }
+        };
+
+        // Vehicle modal functionality
+        const vehicleModal = document.getElementById('vehicleModal');
+        vehicleModal.addEventListener('show.bs.modal', function(event) {
+            const button = event.relatedTarget;
+            const vehicleId = button.getAttribute('data-vehicle');
+            const vehicle = vehicles[vehicleId];
+            
+            document.getElementById('modalVehicleImage').src = vehicle.image;
+            document.getElementById('modalVehicleTitle').textContent = vehicle.title;
+            document.getElementById('modalVehiclePrice').textContent = vehicle.price;
+            document.getElementById('modalVehicleDescription').textContent = vehicle.description;
+            
+            const featuresList = document.getElementById('modalVehicleFeatures');
+            featuresList.innerHTML = '';
+            
+            vehicle.features.forEach(feature => {
+                const li = document.createElement('li');
+                li.textContent = feature;
+                featuresList.appendChild(li);
+            });
+            
+            // WhatsApp link with pre-filled message
+            const whatsappLink = document.getElementById('whatsappLink');
+            const message = `Je suis intéressé par le véhicule ${vehicle.title} (${vehicle.price})`;
+            const encodedMessage = encodeURIComponent(message);
+            whatsappLink.href = `https://wa.me/229XXXXXXXXX?text=${encodedMessage}`;
+        });
+
+        // Filter functionality
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const vehicleItems = document.querySelectorAll('.vehicle-item');
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const filter = button.getAttribute('data-filter');
+                
+                // Update active button
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                
+                // Filter vehicles
+                vehicleItems.forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-brand') === filter) {
+                        item.style.display = 'block';
+                        setTimeout(() => {
+                            item.style.opacity = 1;
+                            item.style.transform = 'translateY(0)';
+                        }, 50);
+                    } else {
+                        item.style.opacity = 0;
+                        item.style.transform = 'translateY(20px)';
+                        setTimeout(() => {
+                            item.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+        });
+
+        // Brand cards filtering
+        const brandCards = document.querySelectorAll('.brand-card');
+        brandCards.forEach(card => {
+            card.addEventListener('click', () => {
+                const brand = card.getAttribute('data-brand');
+                
+                // Find and click the corresponding filter button
+                filterButtons.forEach(button => {
+                    if (button.getAttribute('data-filter') === brand) {
+                        button.click();
+                        
+                        // Scroll to vehicles section
+                        document.getElementById('vehicules').scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+
+        // Form submission
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Here you would typically send the form data to a server
+            alert('Merci pour votre message! Nous vous contacterons bientôt.');
+            this.reset();
+        });
+
+        // Newsletter form
+        document.querySelector('.newsletter-form .btn').addEventListener('click', function() {
+            const email = this.parentElement.querySelector('input').value;
+            if (email && email.includes('@')) {
+                alert('Merci de vous être abonné à notre newsletter!');
+                this.parentElement.querySelector('input').value = '';
+            } else {
+                alert('Veuillez entrer une adresse email valide.');
+            }
+        });
+    </script>
+</body>
+</html>
