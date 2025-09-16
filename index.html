@@ -1511,6 +1511,24 @@
             background-color: #6c757d;
             color: white;
         }
+        .hero-inner {
+  max-width: 640px;      /* largeur du bloc texte */
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+.hero-title {
+  font-size: clamp(1.8rem, 3.5vw, 3.2rem);
+  line-height: 1.1;
+  margin-bottom: .6rem;
+}
+
+.hero-subtitle {
+  opacity: .9;
+  margin-bottom: 1rem;
+}
+
+
     </style>
 </head>
 <body>
@@ -1566,18 +1584,28 @@
             </iframe>
         </div>
 
-        <div class="container hero-content">
-            <div class="row">
-                <div class="col-lg-8" data-aos="fade-right" data-aos-duration="1200">
-                    <h1 class="hero-title">L'EXCELLENCE AUTOMOBILE REDÉFINIE</h1>
-                    <p class="hero-subtitle">Découvrez l'alliance parfaite entre prestige, performance et innovation avec Delta Motors, votre concessionnaire exclusif à Cotonou.</p>
-                    <div class="hero-cta">
-                        <a href="#vehicules" class="btn btn-primary">Explorer la collection</a>
-                        <a href="#contact" class="btn btn-outline-light">Prendre rendez-vous</a>
-                    </div>
-                </div>
-            </div>
+     <div class="container hero-content">
+  <div class="row">
+    <div class="col-12 d-flex">
+      <div class="hero-inner ms-auto text-start" data-aos="fade-left" data-aos-duration="1200">
+        <p class="hero-subtitle">
+          Découvrez l'alliance parfaite entre prestige, performance et innovation 
+          avec Delta Motors, votre concessionnaire exclusif à Cotonou.
+        </p>
+
+        <div class="hero-cta d-flex flex-wrap gap-2">
+          <a href="#vehicules" class="btn btn-primary">Explorer la collection</a>
+          <a href="#contact" class="btn btn-outline-light">Prendre rendez-vous</a>
         </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+</div>
+
 
         <!-- Scroll Indicator -->
         <div class="scroll-indicator">
@@ -1904,7 +1932,7 @@
             <div class="col-md-4 vehicle-item" data-brand="changan" data-aos="fade-up">
                 <div class="vehicle-card" data-bs-toggle="modal" data-bs-target="#vehicleModal" data-vehicle="changan-uni-k-4x4">
                     <div class="vehicle-image">
-                        <img src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=900&q=80" alt="Changan Uni-K 4x4">
+                        <img src="https://www.changan.ma/sites/default/files/2024-06/978x460-UNI-K-BLANC.png" alt="Changan Uni-K 4x4">
                     </div>
                     <span class="availability-badge badge badge-success">En stock</span>
                     <div class="vehicle-details">
@@ -1924,7 +1952,7 @@
             <div class="col-md-4 vehicle-item" data-brand="dongfeng" data-aos="fade-up">
                 <div class="vehicle-card" data-bs-toggle="modal" data-bs-target="#vehicleModal" data-vehicle="dongfeng-shine-max">
                     <div class="vehicle-image">
-                        <img src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=900&q=80" alt="Dongfeng Shine Max">
+                        <img src="https://dongfengmotor.lv/wp-content/uploads/2024/11/shine-black-2-1.png" alt="Dongfeng Shine Max">
                     </div>
                     <span class="availability-badge badge badge-success">En stock</span>
                     <div class="vehicle-details">
@@ -2728,32 +2756,58 @@
                     'Aides à la conduite'
                 ]
             },
-            'changan-uni-k-4x4': {
-                title: 'Changan Uni-K 4x4',
-                price: '19.700.000 FCFA',
-                image: 'https://images.unsplash.com/photo-1553440569-bcc63803a83d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=900&q=80',
-                description: 'SUV Changan Uni-K 4x4, performance tout-terrain et confort premium.',
-                features: [
-                    'Moteur turbo essence',
-                    'Transmission 4x4',
-                    'Suspension adaptable',
-                    'Intérieur cuir premium',
-                    'Toit panoramique'
-                ]
-            },
-            'dongfeng-shine-max': {
-                title: 'Dongfeng Shine Max',
-                price: '12.100.000 FCFA',
-                image: 'https://images.unsplash.com/photo-1553440569-bcc63803a83d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=900&q=80',
-                description: 'Berline Dongfeng Shine Max, élégance et confort pour les longs trajets.',
-                features: [
-                    'Moteur essence économique',
-                    'Transmission automatique',
-                    'Intérieur spacieux',
-                    'Système de navigation',
-                    'Régulateur de vitesse'
-                ]
-            },
+            "changan-uni-k-4x4": {
+    "title": "Changan Uni-K 4x4",
+    "price": "19 700 000 FCFA",
+    "image": "https://www.changan.ma/sites/default/files/2024-06/978x460-UNI-K-BLANC.png",
+    "description": "SUV Changan Uni-K 4x4, performance tout-terrain et confort premium.",
+    "features": [
+      "Moteur 2.0L turbo essence, 233 ch (171 kW)",
+      "Transmission automatique à 8 rapports",
+      "Transmission intégrale (4x4)",
+      "Couple maximal de 390 Nm",
+      "Vitesse maximale de 210 km/h",
+      "Consommation moyenne de 8,9 L/100 km",
+      "Réservoir de carburant de 70 L",
+      "Dimensions : 4865 mm (L) x 1948 mm (l) x 1690 mm (H)",
+      "Poids à vide : environ 1845 kg",
+      "Capacité du coffre : 518 L (extensible à 1412 L)",
+      "Écran tactile de 12 pouces compatible Apple CarPlay et Android Auto",
+      "Système audio SONY avec 14 haut-parleurs",
+      "Sièges en cuir ergonomiques et chauffants",
+      "Volant sport à double D avec réglage électrique",
+      "Caméra panoramique à 360°",
+      "Lampes antibrouillard LED stylisées",
+      "Poignée de porte cachée pour un design aérodynamique"
+    ]
+  },
+            
+  "dongfeng-shine-max": {
+    "title": "Dongfeng Shine Max",
+    "price": "12.100.000 FCFA",
+    "image": "https://dongfengmotor.lv/wp-content/uploads/2024/11/shine-black-2-1.png",
+    "description": "Berline Dongfeng Shine Max, élégance et confort pour les longs trajets.",
+    "features": [
+      "Moteur 1.5L turbo essence, 188-190 ch",
+      "Transmission automatique 7DCT",
+      "Couple maximal 300 Nm",
+      "Vitesse maximale 210 km/h",
+      "Consommation moyenne 5,5-6,2 L/100 km",
+      "Réservoir de carburant 52 L",
+      "Dimensions : 4797 mm (L) x 1870 mm (l) x 1475 mm (H)",
+      "Poids à vide : environ 1232 kg",
+      "Capacité du coffre : 506 L",
+      "Intérieur ergonomique et spacieux",
+      "Écran tactile 10,25 pouces compatible Apple CarPlay et Android Auto",
+      "Sièges confortables et finition premium",
+      "Toit panoramique transparent",
+      "Caméra de recul et assistance au stationnement",
+      "Surveillance des angles morts et alerte de franchissement de ligne",
+      "Système de contrôle de la pression des pneus",
+      "Alarme antivol intégrée",
+      "Phares LED et design extérieur élégant"
+    ]
+  },
             'kaiyi-x3': {
                 title: 'Kaiyi X3',
                 price: '7.600.000 FCFA',
@@ -2769,7 +2823,194 @@
                     'Connectivité Apple CarPlay/Android Auto',
                     'Système de navigation intégré'
                 ]
-            }
+            },
+            'dongfeng-shine-gs-top': {
+    title: 'Dongfeng Shine GS Top',
+    price: '12.100.000 FCFA',
+    image: 'https://dongfengmotor.lv/wp-content/uploads/2024/11/shine-black-2-1.png',
+    description: 'Berline Shine GS Top, élégance et confort pour les trajets quotidiens.',
+    features: [
+        'Moteur essence 1.5L turbo',
+        'Transmission automatique 7DCT',
+        'Intérieur spacieux',
+        'Système de navigation',
+        'Régulateur de vitesse',
+        'Couleurs disponibles : Noire, Grise'
+    ]
+},
+
+'dongfeng-shine-gs-middle': {
+    title: 'Dongfeng Shine GS Middle',
+    price: '10.600.000 FCFA',
+    image: 'https://dongfengmotor.lv/wp-content/uploads/2024/11/shine-black-2-1.png',
+    description: 'Berline Shine GS Middle, confort et économie au quotidien.',
+    features: [
+        'Moteur essence 1.5L',
+        'Transmission automatique 7DCT',
+        'Intérieur ergonomique',
+        'Système multimédia tactile',
+        'Régulateur de vitesse',
+        'Couleurs disponibles : Noire, Grise'
+    ]
+},
+
+'dongfeng-shine-e1': {
+    title: 'Dongfeng Shine E1',
+    price: '8.600.000 FCFA',
+    image: 'https://dongfengmotor.lv/wp-content/uploads/2024/11/shine-black-2-1.png',
+    description: 'Berline Shine E1, pratique et économique pour les trajets quotidiens.',
+    features: [
+        'Moteur essence 1.5L',
+        'Transmission manuelle',
+        'Intérieur confortable',
+        'Système multimédia basique',
+        'Couleurs disponibles : Noire, Grise'
+    ]
+},
+
+'dongfeng-shine-6dct-e3': {
+    title: 'Dongfeng Shine 6DCT E3',
+    price: '9.950.000 FCFA',
+    image: 'https://dongfengmotor.lv/wp-content/uploads/2024/11/shine-black-2-1.png',
+    description: 'Berline Shine 6DCT E3, confort et technologie avancée pour la conduite urbaine.',
+    features: [
+        'Moteur essence 1.5L',
+        'Transmission 6DCT',
+        'Intérieur spacieux',
+        'Système multimédia tactile',
+        'Couleurs disponibles : Noire, Grise'
+    ]
+},
+
+'dongfeng-shine-6dct-e2': {
+    title: 'Dongfeng Shine 6DCT E2',
+    price: '9.200.000 FCFA',
+    image: 'https://dongfengmotor.lv/wp-content/uploads/2024/11/shine-black-2-1.png',
+    description: 'Berline Shine 6DCT E2, idéale pour les trajets quotidiens avec confort.',
+    features: [
+        'Moteur essence 1.5L',
+        'Transmission 6DCT',
+        'Intérieur confortable',
+        'Système multimédia basique',
+        'Couleur disponible : Noire'
+    ]
+},
+
+'forthing-t5-evo': {
+    title: 'Forthing T5 EVO',
+    price: '13.200.000 FCFA',
+    image: 'https://images.unsplash.com/photo-1609857439313-1f36e8b1c0e3?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=80',
+    description: 'SUV Forthing T5 EVO, design moderne et technologie avancée pour une conduite confortable.',
+    features: [
+        'Moteur essence 1.5-2.0L turbo',
+        'Transmission automatique',
+        'Intérieur premium',
+        'Écran tactile multimédia',
+        'Couleur disponible : Noire'
+    ]
+},
+
+'geely-pro': {
+    title: 'Geely Pro',
+    price: '12.600.000 FCFA',
+    image: 'https://images.unsplash.com/photo-1592231234567-abcdef123456?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=80',
+    description: 'Berline Geely Pro, élégance et confort avec options modernes.',
+    features: [
+        'Moteur essence 1.5L turbo',
+        'Transmission automatique',
+        'Intérieur spacieux',
+        'Écran tactile multimédia',
+        'Couleurs disponibles : Grise, Blanche'
+    ]
+},
+
+'exeed-rx-2-0-7dct-4x4': {
+    title: 'Exeed RX 2.0 7DCT 4x4 Confort',
+    price: '26.000.000 FCFA',
+    image: 'https://images.unsplash.com/photo-1592232345678-abcdef987654?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=80',
+    description: 'SUV Exeed RX 2.0 7DCT 4x4, luxe et confort pour les trajets urbains et tout-terrain.',
+    features: [
+        'Moteur 2.0L turbo essence',
+        'Transmission automatique 7DCT',
+        'Transmission intégrale 4x4',
+        'Sièges cuir premium',
+        'Écran multimédia tactile',
+        'Stock en route'
+    ]
+},
+
+'king-long-king-win-15': {
+    title: 'King Long King Win Bus 15 places',
+    price: '12.100.000 FCFA',
+    image: 'https://images.unsplash.com/photo-1609857439999-abcdef123abc?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=80',
+    description: 'Bus King Long King Win, capacité de 15 places, confortable et fiable.',
+    features: [
+        'Moteur Diesel',
+        'Transmission manuelle ou automatique',
+        '15 places assises',
+        'Climatisation',
+        'Couleur : Blanche'
+    ]
+},
+
+'china-ruiye-r4l': {
+    title: 'China Ruiye R4L',
+    price: '14.100.000 FCFA',
+    image: 'https://images.unsplash.com/photo-1609857441234-abcdef654321?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=80',
+    description: 'Camion utilitaire China Ruiye R4L, robuste et adapté au transport de marchandises.',
+    features: [
+        'Moteur Diesel',
+        'Transmission manuelle',
+        'Grande capacité de charge',
+        'Climatisation',
+        'Couleur : Blanche'
+    ]
+},
+
+'kaiyi-x3-middle': {
+    title: 'Kaiyi X3 Middle',
+    price: '7.600.000 FCFA',
+    image: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=80',
+    description: 'Kaiyi X3 Middle, SUV compact avec équipements essentiels.',
+    features: [
+        'Moteur essence 1.5L',
+        'Transmission manuelle ou automatique',
+        'Écran tactile multimédia',
+        'Caméra de recul et capteurs',
+        'Stock en route'
+    ]
+},
+
+'kaiyi-x3-full-option': {
+    title: 'Kaiyi X3 Full Option',
+    price: '8.500.000 FCFA',
+    image: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=80',
+    description: 'Kaiyi X3 Full Option, SUV compact avec toutes les options disponibles.',
+    features: [
+        'Moteur essence 1.5L',
+        'Transmission automatique',
+        'Intérieur complet avec écran tactile et connectivité',
+        'Caméra de recul et capteurs',
+        'Stock en route'
+    ]
+},
+
+'byd-song-plus-hybride': {
+    title: 'BYD Song Plus Hybride',
+    price: '18.700.000 FCFA',
+    image: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=80',
+    description: 'SUV BYD Song Plus Hybride, autonomie électrique de 105 km pour une conduite écologique.',
+    features: [
+        'Moteur hybride essence-électrique',
+        'Autonomie électrique : 105 km',
+        'Recharge rapide disponible',
+        'Écran tactile 12,8 pouces',
+        'Toit panoramique électrique',
+        'Système de freinage régénératif',
+        'Connectivité smartphone avancée'
+    ]
+}
+
         };
 
         // Vehicle modal functionality
