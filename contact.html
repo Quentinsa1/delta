@@ -1,0 +1,1345 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Delta Motors Bénin | Excellence Automobile</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-blue: #005caf;
+            --primary-dark: #0A0A0A;
+            --primary-light: #1A1A1A;
+            --silver: #E5E5E5;
+            --white: #FFFFFF;
+            --accent: #8B0000;
+            --text-dark: #333333;
+            --text-light: #F8F8F8;
+            --blue-light: #e6f0ff;
+            --blue-dark: #004085;
+            --gold: #D4AF37;
+            --platinum: #E5E4E2;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--white);
+            overflow-x: hidden;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: var(--silver);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(to bottom, var(--primary-blue), var(--blue-dark));
+            border-radius: 10px;
+            border: 2px solid var(--silver);
+        }
+        
+        /* Navigation - Redesign Premium */
+        .navbar {
+            padding: 25px 0;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            background-color: transparent;
+            backdrop-filter: blur(10px);
+        }
+        
+        .navbar.scrolled {
+            background-color: rgba(10, 10, 10, 0.95);
+            padding: 15px 0;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(15px);
+        }
+        
+        .navbar-brand {
+            font-weight: 800;
+            font-size: 2rem;
+            color: var(--white);
+            letter-spacing: 1.5px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-brand:hover {
+            transform: translateY(-2px);
+        }
+        
+        .navbar-brand .logo-icon {
+            background: linear-gradient(135deg, var(--primary-blue), var(--blue-dark));
+            width: 45px;
+            height: 45px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            transform: rotate(45deg);
+            box-shadow: 0 5px 15px rgba(0, 92, 175, 0.3);
+            transition: all 0.4s ease;
+        }
+        
+        .navbar-brand:hover .logo-icon {
+            transform: rotate(90deg);
+            box-shadow: 0 8px 20px rgba(0, 92, 175, 0.5);
+        }
+        
+        .navbar-brand .logo-icon span {
+            transform: rotate(-45deg);
+            color: white;
+            font-weight: bold;
+            font-size: 22px;
+            transition: all 0.4s ease;
+        }
+        
+        .navbar-brand:hover .logo-icon span {
+            transform: rotate(-90deg);
+        }
+        
+        .nav-link {
+            color: var(--white) !important;
+            font-weight: 500;
+            margin: 0 15px;
+            position: relative;
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+            padding: 8px 0 !important;
+        }
+        
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: linear-gradient(to right, transparent, var(--primary-blue), transparent);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::before {
+            width: 100%;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary-blue) !important;
+            transform: translateY(-2px);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-blue), var(--blue-dark));
+            border: none;
+            padding: 15px 40px;
+            font-weight: 600;
+            border-radius: 0;
+            letter-spacing: 1px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            box-shadow: 0 5px 15px rgba(0, 92, 175, 0.3);
+        }
+        
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--blue-dark), var(--primary-blue));
+            transition: all 0.6s ease;
+            z-index: -1;
+        }
+        
+        .btn-primary:hover::before {
+            left: 0;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 92, 175, 0.4);
+        }
+        
+        /* Hero Section - Redesign Immersif */
+        .contact-hero {
+            height: 60vh;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-light) 100%);
+        }
+        
+        .contact-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80') center/cover no-repeat;
+            opacity: 0.2;
+            z-index: 0;
+        }
+        
+        .contact-hero-content {
+            position: relative;
+            z-index: 1;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .contact-hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        .contact-hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--silver);
+            margin-bottom: 2.5rem;
+            font-weight: 300;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Section Styling - Élégant et Épuré */
+        .section-padding {
+            padding: 100px 0;
+            position: relative;
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 3rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            display: inline-block;
+            font-size: 2.8rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(to right, var(--primary-blue), var(--blue-dark));
+            transition: width 0.5s ease;
+        }
+        
+        .section-title:hover::after {
+            width: 120px;
+        }
+        
+        .section-title.center {
+            display: block;
+            text-align: center;
+        }
+        
+        .section-title.center::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        /* Contact Form - Design Élégant */
+        .contact-form .form-control {
+            border-radius: 0;
+            border: 1px solid #ddd;
+            padding: 15px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            background-color: transparent;
+            margin-bottom: 25px;
+        }
+        
+        .contact-form .form-control:focus {
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 0.2rem rgba(0, 92, 175, 0.15);
+            background-color: var(--white);
+        }
+        
+        .contact-form textarea.form-control {
+            min-height: 180px;
+            resize: none;
+        }
+        
+        .contact-info-card {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary-light));
+            color: var(--white);
+            padding: 40px;
+            height: 100%;
+            border-left: 5px solid var(--primary-blue);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact-info-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgdmlld0JveD0iMCAwIDYwIDYwIj48ZyBmaWxsPSJub25lIiBzdHJva2VTb2tlPSIjMDA1Y2FmIiBzdHJva2VPcGFjaXR5PSIwLjEiIHN0cm9rZVdpZHRoPSIyIj48cGF0aCBkPSJNIDAgMCBMIDYwIDYwIE0gNjAgMCBMIDAgNjAiLz48L2c+PC9zdmc+');
+            opacity: 0.1;
+            z-index: 0;
+        }
+        
+        .contact-info-card h3 {
+            color: var(--primary-blue);
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .contact-info-card p {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            position: relative;
+            z-index: 1;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-info-card p:hover {
+            transform: translateX(5px);
+        }
+        
+        .contact-info-card i {
+            color: var(--primary-blue);
+            width: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-info-card p:hover i {
+            transform: scale(1.2);
+        }
+        
+        .contact-method {
+            text-align: center;
+            padding: 40px 30px;
+            border-radius: 8px;
+            transition: all 0.4s ease;
+            background-color: var(--white);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            height: 100%;
+            border-top: 4px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact-method::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 0;
+            background: linear-gradient(to bottom, var(--primary-blue), transparent);
+            opacity: 0.1;
+            transition: all 0.4s ease;
+            z-index: 0;
+        }
+        
+        .contact-method:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+            border-top: 4px solid var(--primary-blue);
+            background-color: var(--white);
+        }
+        
+        .contact-method:hover::before {
+            height: 100%;
+        }
+        
+        .contact-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--blue-dark));
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 30px;
+            transition: all 0.4s ease;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .contact-method:hover .contact-icon {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 10px 20px rgba(0, 92, 175, 0.3);
+        }
+        
+        .contact-method h3 {
+            margin-bottom: 20px;
+            color: var(--primary-dark);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .contact-method p {
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Map Section */
+        .map-container {
+            height: 450px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* FAQ Section */
+        .faq-item {
+            margin-bottom: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+        
+        .faq-item:hover {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .faq-question {
+            padding: 20px;
+            background: var(--white);
+            cursor: pointer;
+            position: relative;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-question::after {
+            content: '\f078';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-item.active .faq-question::after {
+            transform: rotate(180deg);
+        }
+        
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            background: var(--white);
+        }
+        
+        .faq-item.active .faq-answer {
+            padding: 20px;
+            max-height: 300px;
+        }
+        
+        /* Floating Elements - Éléments Flottants */
+        .floating-shape {
+            position: absolute;
+            z-index: -1;
+            opacity: 0.1;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .shape-1 {
+            top: 20%;
+            left: 5%;
+            width: 200px;
+            height: 200px;
+            background: var(--primary-blue);
+            border-radius: 50%;
+            filter: blur(20px);
+            animation-delay: 0s;
+        }
+        
+        .shape-2 {
+            bottom: 10%;
+            right: 10%;
+            width: 150px;
+            height: 150px;
+            background: var(--primary-blue);
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            filter: blur(15px);
+            animation-delay: 2s;
+        }
+        
+        .shape-3 {
+            top: 60%;
+            left: 10%;
+            width: 100px;
+            height: 100px;
+            background: var(--gold);
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            filter: blur(10px);
+            animation-delay: 4s;
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(5deg);
+            }
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+        }
+        
+        /* Decorative Elements */
+        .decorative-line {
+            height: 3px;
+            width: 80px;
+            background: linear-gradient(to right, transparent, var(--primary-blue), transparent);
+            margin: 30px auto;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .decorative-line::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, transparent, var(--white), transparent);
+            animation: shine 3s infinite;
+        }
+        
+        @keyframes shine {
+            0% {
+                left: -100%;
+            }
+            20% {
+                left: 100%;
+            }
+            100% {
+                left: 100%;
+            }
+        }
+        
+        /* Footer - Design Premium */
+        footer {
+            background: linear-gradient(to bottom, var(--primary-dark), #050505);
+            color: var(--white);
+            padding: 100px 0 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, transparent, var(--primary-blue), transparent);
+        }
+        
+        .footer-title {
+            color: var(--primary-blue);
+            margin-bottom: 25px;
+            font-size: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .footer-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--primary-blue);
+            transition: width 0.3s ease;
+        }
+        
+        .footer-title:hover::after {
+            width: 60px;
+        }
+        
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links li:hover {
+            transform: translateX(5px);
+        }
+        
+        .footer-links a {
+            color: var(--silver);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .footer-links a::before {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: var(--primary-blue);
+            transition: width 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary-blue);
+        }
+        
+        .footer-links a:hover::before {
+            width: 100%;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-icons a {
+            width: 40px;
+            height: 40px;
+            border: 1px solid var(--primary-blue);
+            color: var(--primary-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .social-icons a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: var(--primary-blue);
+            transition: all 0.3s ease;
+            z-index: -1;
+        }
+        
+        .social-icons a:hover::before {
+            width: 100%;
+        }
+        
+        .social-icons a:hover {
+            color: var(--white);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 92, 175, 0.3);
+        }
+        
+        .newsletter-form .form-control {
+            border-radius: 0;
+            border: 1px solid #444;
+            background-color: transparent;
+            color: var(--white);
+            padding: 12px 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .newsletter-form .form-control:focus {
+            border-color: var(--primary-blue);
+            box-shadow: none;
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+        
+        .newsletter-form .btn {
+            border-radius: 0;
+            padding: 12px 20px;
+        }
+        
+        .copyright {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 50px;
+            padding-top: 20px;
+            text-align: center;
+            color: var(--silver);
+            font-size: 0.9rem;
+        }
+        
+        /* Chatbot - Design Futuriste */
+        .chatbot-container {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+        }
+        
+        .chatbot-btn {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-blue), var(--blue-dark));
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(0, 92, 175, 0.3);
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .chatbot-btn::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.2), transparent);
+            transform: rotate(45deg);
+            transition: all 0.3s ease;
+            z-index: -1;
+        }
+        
+        .chatbot-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 15px 30px rgba(0, 92, 175, 0.4);
+        }
+        
+        .chatbot-btn:hover::before {
+            transform: rotate(45deg) translate(50%, -50%);
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(0, 92, 175, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(0, 92, 175, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(0, 92, 175, 0);
+            }
+        }
+        
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--blue-dark));
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 999;
+            box-shadow: 0 5px 15px rgba(0, 92, 175, 0.3);
+        }
+        
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 92, 175, 0.4);
+        }
+        
+        /* Loading Animation */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--primary-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+        
+        .loading-overlay.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .loader {
+            width: 80px;
+            height: 80px;
+            position: relative;
+        }
+        
+        .loader:before, .loader:after {
+            content: '';
+            position: absolute;
+            border: 4px solid var(--primary-blue);
+            opacity: 1;
+            border-radius: 50%;
+            animation: pulse 1.5s ease-out infinite;
+        }
+        
+        .loader:after {
+            animation-delay: -0.5s;
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 0;
+            }
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 1200px) {
+            .contact-hero-title {
+                font-size: 3rem;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .contact-hero-title {
+                font-size: 2.8rem;
+            }
+            
+            .navbar {
+                background-color: var(--primary-dark);
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .contact-hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .contact-hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .contact-hero {
+                height: 50vh;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .contact-hero-title {
+                font-size: 2rem;
+            }
+            
+            .section-padding {
+                padding: 80px 0;
+            }
+            
+            .chatbot-container {
+                bottom: 20px;
+                right: 20px;
+            }
+            
+            .chatbot-btn {
+                width: 60px;
+                height: 60px;
+                font-size: 22px;
+            }
+            
+            .back-to-top {
+                bottom: 90px;
+                right: 20px;
+                width: 45px;
+                height: 45px;
+                font-size: 18px;
+            }
+        }
+        
+        .navbar-logo {
+            height: 100px;
+            width: auto;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Overlay -->
+    <div class="loading-overlay">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="logo.png" alt="Delta Motors Logo" class="navbar-logo">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#marques">Marques</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#vehicules">Véhicules</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="contact-hero">
+        <div class="floating-shape shape-1"></div>
+        <div class="floating-shape shape-2"></div>
+        <div class="floating-shape shape-3"></div>
+        
+        <div class="container contact-hero-content">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="contact-hero-title" data-aos="fade-up">Contact Prestige</h1>
+                    <p class="contact-hero-subtitle" data-aos="fade-up" data-aos-delay="200">
+                        Notre équipe d'experts est à votre disposition pour concrétiser vos projets automobiles
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Methods Section -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5" data-aos="fade-up">
+                    <h2 class="section-title center">Comment nous contacter</h2>
+                    <p class="lead">Plusieurs moyens pour entrer en relation avec nos conseillers</p>
+                    <div class="decorative-line"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <h3>Téléphone</h3>
+                        <p>Appelez-nous directement pour une réponse immédiate</p>
+                        <p class="mt-3"><strong>+229 XX XX XX XX</strong></p>
+                        <p class="mt-2">Lun - Ven: 8h00 - 18h00</p>
+                        <p>Samedi: 9h00 - 16h00</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>Email</h3>
+                        <p>Envoyez-nous un message et nous vous répondrons rapidement</p>
+                        <p class="mt-3"><strong>info@deltamotorsbenin.com</strong></p>
+                        <p class="mt-2"><strong>ventes@deltamotorsbenin.com</strong></p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <h3>WhatsApp</h3>
+                        <p>Discutez en direct avec nos conseillers via WhatsApp</p>
+                        <p class="mt-3"><strong>+229 XX XX XX XX</strong></p>
+                        <a href="https://wa.me/229XXXXXXXXX" class="btn btn-primary mt-3">Nous écrire</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form & Info Section -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5" data-aos="fade-up">
+                    <h2 class="section-title center">Envoyez-nous un message</h2>
+                    <p class="lead">Remplissez le formulaire ci-dessous et nous vous recontacterons rapidement</p>
+                    <div class="decorative-line"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 mb-5 mb-lg-0" data-aos="fade-right">
+                    <form class="contact-form">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" placeholder="Votre nom complet" required>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="email" class="form-control" placeholder="Votre adresse email" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input type="tel" class="form-control" placeholder="Votre numéro de téléphone">
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" placeholder="Sujet de votre message">
+                            </div>
+                        </div>
+                        <textarea class="form-control" rows="5" placeholder="Votre message" required></textarea>
+                        <button type="submit" class="btn btn-primary">Envoyer le message</button>
+                    </form>
+                </div>
+                <div class="col-lg-4" data-aos="fade-left">
+                    <div class="contact-info-card">
+                        <h3>Informations de contact</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> Tanto, PK4, Route de Porto-Novo, Cotonou, Bénin</p>
+                        <p><i class="fas fa-phone"></i> +229 XX XX XX XX</p>
+                        <p><i class="fas fa-envelope"></i> info@deltamotorsbenin.com</p>
+                        <hr>
+                        <h4>Heures d'ouverture</h4>
+                        <p><i class="far fa-clock"></i> Lun - Ven: 8h00 - 18h00</p>
+                        <p><i class="far fa-clock"></i> Samedi: 9h00 - 16h00</p>
+                        <p><i class="far fa-clock"></i> Dimanche: Fermé</p>
+                        <hr>
+                        <h4>Suivez-nous</h4>
+                        <div class="social-icons">
+                            <a href="https://www.facebook.com/deltagroupeafrique"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5" data-aos="fade-up">
+                    <h2 class="section-title center">Notre emplacement</h2>
+                    <p class="lead">Venez nous rendre visite dans notre showroom à Cotonou</p>
+                    <div class="decorative-line"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12" data-aos="fade-up">
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.046424470201!2d2.439521575956508!3d6.402886223933123!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1023553d10c30c29%3A0x8b2f8b0b5c5c5c5c!2sCotonou%2C%20B%C3%A9nin!5e0!3m2!1sfr!2sfr!4v1642345678901!5m2!1sfr!2sfr" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5" data-aos="fade-up">
+                    <h2 class="section-title center">Questions fréquentes</h2>
+                    <p class="lead">Trouvez rapidement des réponses à vos interrogations</p>
+                    <div class="decorative-line"></div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="faq-item" data-aos="fade-up">
+                        <div class="faq-question">Quels sont les horaires d'ouverture de votre showroom?</div>
+                        <div class="faq-answer">
+                            <p>Notre showroom est ouvert du lundi au vendredi de 8h00 à 18h00, et le samedi de 9h00 à 16h00. Nous sommes fermés le dimanche.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
+                        <div class="faq-question">Proposez-vous des services de test drive?</div>
+                        <div class="faq-answer">
+                            <p>Oui, nous proposons des essais routiers pour tous nos véhicules. Il suffit de prendre rendez-vous à l'avance avec l'un de nos conseillers.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
+                        <div class="faq-question">Quelles options de financement proposez-vous?</div>
+                        <div class="faq-answer">
+                            <p>Nous travaillons avec plusieurs institutions financières pour vous proposer des solutions de financement adaptées à votre situation. N'hésitez pas à nous contacter pour une étude personnalisée.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
+                        <div class="faq-question">Proposez-vous un service après-vente?</div>
+                        <div class="faq-answer">
+                            <p>Absolument. Notre atelier est équipé des dernières technologies et notre équipe de techniciens certifiés assure l'entretien et la réparation de tous nos véhicules.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item" data-aos="fade-up" data-aos-delay="400">
+                        <div class="faq-question">Comment puis-je réserver un véhicule?</div>
+                        <div class="faq-answer">
+                            <p>Vous pouvez réserver un véhicule en nous contactant par téléphone, par email ou directement via notre site web. Un acompte peut être demandé pour confirmer votre réservation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section-padding" style="background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-light) 100%); color: var(--white);">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center" data-aos="fade-up">
+                    <h2 class="section-title center" style="color: var(--white);">Prêt à vivre l'expérience Delta Motors?</h2>
+                    <p class="lead mb-4">Prenez rendez-vous dès maintenant avec l'un de nos conseillers</p>
+                    <a href="#contact-form" class="btn btn-primary me-3">Prendre rendez-vous</a>
+                    <a href="tel:+229XXXXXXXXX" class="btn btn-outline-light">Nous appeler</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <h3 class="footer-title">Delta Motors</h3>
+                    <p>Votre concessionnaire premium de véhicules Haval, BYD et Kaiyi à Cotonou, Bénin. Excellence, innovation et prestige.</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/deltagroupeafrique"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+                    <h3 class="footer-title">Navigation</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="index.html#marques">Marques</a></li>
+                        <li><a href="index.html#vehicules">Véhicules</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h3 class="footer-title">Nos marques</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Haval</a></li>
+                        <li><a href="#">BYD</a></li>
+                        <li><a href="#">Kaiyi</a></li>
+                        <li><a href="#">Great Wall</a></li>
+                        <li><a href="#">Véhicules d'occasion</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h3 class="footer-title">Newsletter</h3>
+                    <p>Abonnez-vous pour recevoir nos actualités et offres exclusives.</p>
+                    <form class="newsletter-form">
+                        <div class="input-group mb-3">
+                            <input type="email" class="form-control" placeholder="Votre email" aria-label="Email">
+                            <button class="btn btn-primary" type="button"><i class="fas fa-paper-plane"></i></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Delta Motors Bénin. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chatbot -->
+    <div class="chatbot-container">
+        <div class="chatbot-btn">
+            <i class="fas fa-comments"></i>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- AOS Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Custom JS -->
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1200,
+            once: true,
+            easing: 'ease-in-out'
+        });
+
+        // Loading animation
+        window.addEventListener('load', function() {
+            const loadingOverlay = document.querySelector('.loading-overlay');
+            setTimeout(() => {
+                loadingOverlay.classList.add('hidden');
+            }, 1500);
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            const backToTop = document.querySelector('.back-to-top');
+            
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+            
+            if (window.scrollY > 500) {
+                backToTop.classList.add('active');
+            } else {
+                backToTop.classList.remove('active');
+            }
+        });
+
+        // Back to top functionality
+        document.querySelector('.back-to-top').addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // FAQ functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+
+        // Form submission
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Here you would typically send the form data to a server
+            alert('Merci pour votre message! Nous vous contacterons bientôt.');
+            this.reset();
+        });
+
+        // Newsletter form
+        document.querySelector('.newsletter-form .btn').addEventListener('click', function() {
+            const email = this.parentElement.querySelector('input').value;
+            if (email && email.includes('@')) {
+                alert('Merci de vous être abonné à notre newsletter!');
+                this.parentElement.querySelector('input').value = '';
+            } else {
+                alert('Veuillez entrer une adresse email valide.');
+            }
+        });
+    </script>
+</body>
+</html>
