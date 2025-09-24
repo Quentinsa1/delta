@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Delta Motors Bénin | Excellence Automobile</title>
-    
+    <link rel="icon" type="image/png" href="logo.png">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     
@@ -303,6 +303,17 @@
             overflow: hidden;
             z-index: -2;
         }
+
+        .video-background video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+}
+
         
         .video-background iframe {
             position: absolute;
@@ -1485,7 +1496,7 @@
         }
         
         .navbar-logo {
-            height: 100px;
+            height: 150px;
             width: auto;
             display: block;
         }
@@ -1540,7 +1551,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="logo.png" alt="Delta Motors Logo" class="navbar-logo">
+                <img src="LOGO DELTA PNG BLANC.png" alt="Delta Motors Logo" class="navbar-logo">
             </a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -1569,50 +1580,46 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="accueil" class="hero">
-        <div class="hero-overlay"></div>
-        <div class="floating-shape shape-1"></div>
-        <div class="floating-shape shape-2"></div>
-        <div class="floating-shape shape-3"></div>
-        <div class="video-background">
-            <iframe 
-                src="https://www.youtube.com/embed/qouAU3_kEi0?autoplay=1&mute=1&loop=1&playlist=qouAU3_kEi0&controls=0&modestbranding=1&rel=0" 
-                frameborder="0" 
-                allow="autoplay; fullscreen" 
-                allowfullscreen>
-            </iframe>
-        </div>
+   <section id="accueil" class="hero">
+    <div class="hero-overlay"></div>
+    <div class="floating-shape shape-1"></div>
+    <div class="floating-shape shape-2"></div>
+    <div class="floating-shape shape-3"></div>
 
-     <div class="container hero-content">
-  <div class="row">
-    <div class="col-12 d-flex">
-      <div class="hero-inner ms-auto text-start" data-aos="fade-left" data-aos-duration="1200">
-        <p class="hero-subtitle">
-          Découvrez l'alliance parfaite entre prestige, performance et innovation 
-          avec Delta Motors, votre concessionnaire exclusif à Cotonou.
-        </p>
-
-        <div class="hero-cta d-flex flex-wrap gap-2">
-          <a href="#vehicules" class="btn btn-primary">Explorer la collection</a>
-          <a href="#contact" class="btn btn-outline-light">Prendre rendez-vous</a>
-        </div>
-      </div>
+    <!-- Video de fond locale -->
+    <div class="video-background">
+        <video autoplay muted loop playsinline>
+            <source src="videos/haval.mp4" type="video/mp4">
+            Votre navigateur ne supporte pas la vidéo en arrière-plan.
+        </video>
     </div>
-  </div>
-</div>
 
-</div>
+    <div class="container hero-content">
+        <div class="row">
+            <div class="col-12 d-flex">
+                <div class="hero-inner ms-auto text-start" data-aos="fade-left" data-aos-duration="1200">
+                    <p class="hero-subtitle">
+                        Découvrez l'alliance parfaite entre prestige, performance et innovation 
+                        avec Delta Motors, votre concessionnaire exclusif à Cotonou.
+                    </p>
 
-</div>
-
-
-        <!-- Scroll Indicator -->
-        <div class="scroll-indicator">
-            <div class="mouse">
-                <div class="wheel"></div>
+                    <div class="hero-cta d-flex flex-wrap gap-2">
+                        <a href="#vehicules" class="btn btn-primary">Explorer la collection</a>
+                        <a href="#contact" class="btn btn-outline-light">Prendre rendez-vous</a>
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator">
+        <div class="mouse">
+            <div class="wheel"></div>
+        </div>
+    </div>
+</section>
+
 
     <!-- Statistics Section -->
     <section class="stats-section">
@@ -2269,28 +2276,26 @@
             <div class="row">
                 <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
                     <div class="testimonial-card">
-                        <p class="testimonial-text">J'ai acheté mon Haval H6 chez Delta Motors il y a 6 mois et je suis plus que satisfait. Le service après-vente est exceptionnel et le véhicule est d'une qualité remarquable.</p>
+                        <p class="testimonial-text">Il est rare de rencontrer des concessionnaires avec un personnel compétent et à l’écoute de la clientèle comme Delta Motors. Ma voiture KAIYI X3PRO acquis est d’une performance énorme économique et résistant. À tous, je vous conseille Delta Motors </p>
                         <div class="testimonial-author">
                             <div class="author-avatar">
-                                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client">
+                                <img src="Achille.jpeg" alt="Client">
                             </div>
                             <div class="author-details">
-                                <h5>Koffi Mensah</h5>
-                                <p>Entrepreneur</p>
+                                <h5>Mr KPETCHEKOU Achille</h5>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
                     <div class="testimonial-card">
-                        <p class="testimonial-text">Excellente expérience d'achat. Le personnel est compétent et à l'écoute. Mon BYD Song Plus Hybride est économique et performant. Je recommande vivement Delta Motors.</p>
+                        <p class="testimonial-text">DELTA MOTORS, c’est 100%, c’est 20/20 ! Qualité, suivi et accompagnement humain irréprochables. On ne se sent pas client, mais vraiment considéré.</p>
                         <div class="testimonial-author">
                             <div class="author-avatar">
-                                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client">
+                                <img src="https://chaire-eti.org/wp-content/uploads/2018/01/avatar-homme.png" alt="Client">
                             </div>
                             <div class="author-details">
-                                <h5>Chantal Adjobo</h5>
-                                <p>Cadre dirigeante</p>
+                                <h5>Mr DJELILI</h5>
                             </div>
                         </div>
                     </div>
@@ -2380,7 +2385,7 @@
             </div>
             <div class="row">
                 <div class="col-md-6 mb-4" data-aos="fade-right">
-                    <form class="contact-form">
+                    <form class="contact-form" action="send-mail.php" method="POST">
                         <div class="mb-4">
                             <input type="text" class="form-control" placeholder="Votre nom complet" required>
                         </div>
@@ -2459,7 +2464,7 @@
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2023 Delta Motors Bénin. Tous droits réservés.</p>
+                <p>&copy; 2025 Delta Motors Bénin. Tous droits réservés.</p>
             </div>
         </div>
     </footer>
